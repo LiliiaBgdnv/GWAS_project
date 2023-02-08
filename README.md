@@ -1,5 +1,7 @@
 # GWAS_project
 
+**All data there are in folders, but its in zip format**
+
 ## First step: prepare the data for use by the model.
 
 Conversion of genotype data from vcf format to hapmap was performed in the [TASSEL 5](https://tassel.bitbucket.io/) program. 
