@@ -1,6 +1,6 @@
 # GWAS_project
 
-**All data there are in folders, but its in zip format**
+**All data there are in folders, but they're in  in zip format**
 
 ## First step: prepare the data for use by the model.
 
