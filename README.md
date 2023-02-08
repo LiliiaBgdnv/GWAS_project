@@ -1,4 +1,4 @@
-# GWAS_progect
+# GWAS_project
 
 ## First step: prepare the data for use by the model.
 
