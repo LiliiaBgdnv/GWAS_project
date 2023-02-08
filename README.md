@@ -6,6 +6,7 @@ Conversion of genotype data from vcf format to hapmap was performed in the [TASS
 The conversion from hapmap to numerical was done with the R package [GAPIT3](https://zzlab.net/GAPIT/gapit_help_document.pdf).
 ```ruby
 source("http://zzlab.net/GAPIT/GAPIT.library.R")
+source("http://zzlab.net/GAPIT/gapit_functions.txt")
 ```
 Setting the working directory:
 ```ruby
