@@ -54,4 +54,21 @@ sesame_phenotypes_2018_Plant_height_means <- sesame_phenotypes_2018_Plant_height
 sesame_phenotypes_2018_Plant_height_means$Genotype <- paste("S", sesame_phenotypes_2018_Plant_height_means$Genotype, sep="-")
 sesame_phenotypes_2018_Plant_height$Genotype <- as.numeric(sesame_phenotypes_2018_Plant_height$Genotype)
 ```
+# FaST-LMM
+Create env:
+```ruby
+python3.11 -m venv FaST-LMM
+source FaST-LMM/bin/activate
+```
+Installing:
+```ruby
+pip install fastlmm
+```
+
+Installing and using plink (to convert vcf fotmat in bed, bim, fam):
+```ruby
+conda install -c bioconda plink2
+plink2 --vcf sesame_complicated_genotypes.vcf.gz --make-bed --allow-extra-chr --out sesame_complicated_genotypes
+plink2 --vcf soybean_simple_genotypes.vcf.gz --make-bed --allow-extra-chr --out sesame_complicated_genotypes
+```
 
