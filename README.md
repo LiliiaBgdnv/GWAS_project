@@ -41,6 +41,12 @@ sum(is.na(soy_phenotypes)) # 0
 soy_phenotypes[2:250, 3:17] <- lapply(soy_phenotypes[2:250, 3:17], as.numeric) # convert all values into a numeric format
 soy_phenotypes_leu <- cbind(soy_phenotypes$V1, soy_phenotypes$V10) # column 1 with the taxon name and column 10 with the amino acid leucine are selected
 colnames(soy_phenotypes_leu) <- c ("Taxa", "Leu") 
+
+#Process phenotype file
+myY <- read.table("processed_soy_phenotypes_leu.tsv", sep = '\t', header = TRUE)
+write.table(myY, file='processed_soy_phenotypes_leu.txt', quote=FALSE, sep='\t', row.names = F)
+
+#Process hapmap file: manually deleted two "#" symbols in the header
 ```
 For the **sesame data**, a selection was made according to the Plant height characteristic for 2018, after which the average value for all groups was taken.
 ```ruby
@@ -54,6 +60,19 @@ sesame_phenotypes_2018_Plant_height_means <- sesame_phenotypes_2018_Plant_height
 sesame_phenotypes_2018_Plant_height_means$Genotype <- paste("S", sesame_phenotypes_2018_Plant_height_means$Genotype, sep="-")
 sesame_phenotypes_2018_Plant_height$Genotype <- as.numeric(sesame_phenotypes_2018_Plant_height$Genotype)
 ```
+
+## GRAPIT Blink model 
+**time 43.55 sec**
+
+```ruby
+myY  <- read.table("C:...//processed_soy_phenotypes_leu.txt", sep = '\t', head = TRUE)
+myG <- read.delim("C:...//soybean_simple_genotypes.hmp.txt", head = FALSE)
+myGAPIT <- GAPIT(
+                  Y=myY,
+                  G=myG,
+                   PCA.total=3)
+```
+
 # FaST-LMM
 Create env:
 ```ruby
