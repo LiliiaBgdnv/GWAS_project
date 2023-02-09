@@ -1,5 +1,7 @@
 # GWAS_project
 
+# GRAPIT (FarmCPU, MLM, Blink)
+
 **All data there are in folders, but they're in  in zip format**
 
 ## First step: prepare the data for use by the model.
