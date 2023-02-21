@@ -1,6 +1,6 @@
 # GWAS_project
 
-# GRAPIT (FarmCPU, MLM, Blink)
+# GAPIT (FarmCPU, MLM, Blink)
 
 **All data there are in folders, but they're in  in zip format**
 
