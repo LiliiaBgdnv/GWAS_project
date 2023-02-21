@@ -61,7 +61,7 @@ sesame_phenotypes_2018_Plant_height_means$Genotype <- paste("S", sesame_phenotyp
 sesame_phenotypes_2018_Plant_height$Genotype <- as.numeric(sesame_phenotypes_2018_Plant_height$Genotype)
 ```
 
-## GRAPIT Blink model 
+## GAPIT Blink model 
 **time 43.55 sec**
 
 ```ruby
