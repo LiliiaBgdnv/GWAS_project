@@ -61,17 +61,155 @@ sesame_phenotypes_2018_Plant_height_means$Genotype <- paste("S", sesame_phenotyp
 sesame_phenotypes_2018_Plant_height$Genotype <- as.numeric(sesame_phenotypes_2018_Plant_height$Genotype)
 ```
 
-## GAPIT Blink model 
-**time 43.55 sec**
+## Soybean FarmCPU model 
 
 ```ruby
-myY  <- read.table("C:...//processed_soy_phenotypes_leu.txt", sep = '\t', head = TRUE)
-myG <- read.delim("C:...//soybean_simple_genotypes.hmp.txt", head = FALSE)
-myGAPIT <- GAPIT(
-                  Y=myY,
-                  G=myG,
-                   PCA.total=3)
+setwd('C:/../../../FarmCPU_soybean_2')
+myY  <- read.table("C://..//..//..//..//processed_soy_phenotypes_leu.txt", sep = '\t', head = TRUE)
+myG <- read.delim("C://..//..//..//..//soybean_simple_genotypes.hmp.txt", head = FALSE)
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="FarmCPU",
+  SNP.FDR = 0.05
+))
 ```
+![image](https://user-images.githubusercontent.com/109213422/224039902-3e6f7eba-a96f-44d8-880e-c54c52ea2f15.png)
+
+| SNP                   | Chr         | Pos      | P.value              | MAF               | nobs | H&B.P.Value        | Effect            |
+|-----------------------|-------------|----------|----------------------|-------------------|------|--------------------|-------------------|
+| SGLYMACHR_18_61818402 | GLYMACHR_18 | 61818402 | 1.88033730003591e-06 | 0.5               | 97   | 0.0069391406918542 | 1.83250994205456  |
+| SGLYMACHR_18_61819070 | GLYMACHR_18 | 61819070 | 2.38478930899706e-06 | 0.494845360824742 | 97   | 0.0069391406918542 | -1.8435566021963  |
+| SGLYMACHR_18_61846089 | GLYMACHR_18 | 61846089 | 2.38478930899706e-06 | 0.494845360824742 | 97   | 0.0069391406918542 | -1.8435566021963  |
+| SGLYMACHR_18_61846097 | GLYMACHR_18 | 61846097 | 2.38478930899706e-06 | 0.494845360824742 | 97   | 0.0069391406918542 | -1.8435566021963  |
+| SGLYMACHR_18_61846199 | GLYMACHR_18 | 61846199 | 2.38478930899706e-06 | 0.494845360824742 | 97   | 0.0069391406918542 | -1.8435566021963  |
+| SGLYMACHR_18_61846240 | GLYMACHR_18 | 61846240 | 2.38478930899509e-06 | 0.494845360824742 | 97   | 0.0069391406918542 | 1.84355660219631  |
+| SGLYMACHR_18_61846255 | GLYMACHR_18 | 61846255 | 2.38478930899509e-06 | 0.494845360824742 | 97   | 0.0069391406918542 | 1.84355660219631  |
+| SGLYMACHR_18_61846357 | GLYMACHR_18 | 61846357 | 2.38478930899509e-06 | 0.494845360824742 | 97   | 0.0069391406918542 | 1.84355660219631  |
+| SGLYMACHR_18_61832336 | GLYMACHR_18 | 61832336 | 9.06381141379862e-06 | 0.494845360824742 | 97   | 0.0234430446767116 | 1.74061809163047  |
+| SGLYMACHR_20_18390575 | GLYMACHR_20 | 18390575 | 2.07679479332065e-05 | 0.123711340206186 | 97   | 0.0483436291989182 | -2.47779977697192 |
+| SGLYMACHR_18_61915849 | GLYMACHR_18 | 61915849 | 3.52642338719254e-05 | 0.438144329896907 | 97   | 0.0746255305518799 | -1.48761165405494 |
+
+## Soybean SUPER model 
+
+```ruby
+setwd('C:/../../../SUPER_soybean_2')
+myY  <- read.table("C://..//..//..//..//processed_soy_phenotypes_leu.txt", sep = '\t', head = TRUE)
+myG <- read.delim("C://..//..//..//..//soybean_simple_genotypes.hmp.txt", head = FALSE)
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="SUPER",
+  SNP.FDR = 0.05
+))
+```
+![image](https://user-images.githubusercontent.com/109213422/224044794-05acde16-dc54-4fe2-ad27-971a9e054014.png)
+
+| SNP                   | Chr         | Pos      | P.value              | MAF               | nobs | H&B.P.Value        | Effect |
+|-----------------------|-------------|----------|----------------------|-------------------|------|--------------------|--------|
+| SGLYMACHR_18_61818402 | GLYMACHR_18 | 61818402 | 2.71734020996048e-05 | 0.5               | 92   | 0.0899196719844409 | NA     |
+| SGLYMACHR_18_61819070 | GLYMACHR_18 | 61819070 | 3.09028858095853e-05 | 0.494845360824742 | 92   | 0.0899196719844409 | NA     |
+| SGLYMACHR_18_61846089 | GLYMACHR_18 | 61846089 | 3.09028858095853e-05 | 0.494845360824742 | 92   | 0.0899196719844409 | NA     |
+| SGLYMACHR_18_61846097 | GLYMACHR_18 | 61846097 | 3.09028858095853e-05 | 0.494845360824742 | 92   | 0.0899196719844409 | NA     |
+| SGLYMACHR_18_61846199 | GLYMACHR_18 | 61846199 | 3.09028858095853e-05 | 0.494845360824742 | 92   | 0.0899196719844409 | NA     |
+| SGLYMACHR_18_61846240 | GLYMACHR_18 | 61846240 | 3.09028858095796e-05 | 0.494845360824742 | 92   | 0.0899196719844409 | NA     |
+| SGLYMACHR_18_61846255 | GLYMACHR_18 | 61846255 | 3.09028858095796e-05 | 0.494845360824742 | 92   | 0.0899196719844409 | NA     |
+| SGLYMACHR_18_61846357 | GLYMACHR_18 | 61846357 | 3.09028858095796e-05 | 0.494845360824742 | 92   | 0.0899196719844409 | NA     |
+
+## Soybean BLINK model 
+
+```ruby
+setwd('C:/../../../BLINK_soybean_2')
+myY  <- read.table("C://..//..//..//..//processed_soy_phenotypes_leu.txt", sep = '\t', head = TRUE)
+myG <- read.delim("C://..//..//..//..//soybean_simple_genotypes.hmp.txt", head = FALSE)
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="BLINK",
+  SNP.FDR = 0.05
+))
+```
+![image](https://user-images.githubusercontent.com/109213422/224045617-98c7c3d6-11da-4b5f-909e-cb281e018007.png)
+
+| SNP                   | Chr         | Pos      | P.value              | MAF               | nobs | H&B.P.Value         | Effect            |
+|-----------------------|-------------|----------|----------------------|-------------------|------|---------------------|-------------------|
+| SGLYMACHR_18_61818402 | GLYMACHR_18 | 61818402 | 1.87561573471076e-06 | 0.5               | 97   | 0.00692203007624291 | 1.83250994205456  |
+| SGLYMACHR_18_61819070 | GLYMACHR_18 | 61819070 | 2.37890886716828e-06 | 0.494845360824742 | 97   | 0.00692203007624291 | -1.8435566021963  |
+| SGLYMACHR_18_61846089 | GLYMACHR_18 | 61846089 | 2.37890886716828e-06 | 0.494845360824742 | 97   | 0.00692203007624291 | -1.8435566021963  |
+| SGLYMACHR_18_61846097 | GLYMACHR_18 | 61846097 | 2.37890886716828e-06 | 0.494845360824742 | 97   | 0.00692203007624291 | -1.8435566021963  |
+| SGLYMACHR_18_61846199 | GLYMACHR_18 | 61846199 | 2.37890886716828e-06 | 0.494845360824742 | 97   | 0.00692203007624291 | -1.8435566021963  |
+| SGLYMACHR_18_61846240 | GLYMACHR_18 | 61846240 | 2.37890886716632e-06 | 0.494845360824742 | 97   | 0.00692203007624291 | 1.84355660219631  |
+| SGLYMACHR_18_61846255 | GLYMACHR_18 | 61846255 | 2.37890886716632e-06 | 0.494845360824742 | 97   | 0.00692203007624291 | 1.84355660219631  |
+| SGLYMACHR_18_61846357 | GLYMACHR_18 | 61846357 | 2.37890886716632e-06 | 0.494845360824742 | 97   | 0.00692203007624291 | 1.84355660219631  |
+| SGLYMACHR_18_61832336 | GLYMACHR_18 | 61832336 | 9.04376415752922e-06 | 0.494845360824742 | 97   | 0.0233911935621072  | 1.74061809163047  |
+| SGLYMACHR_20_18390575 | GLYMACHR_20 | 18390575 | 2.07252902319826e-05 | 0.123711340206186 | 97   | 0.0482443306020092  | -2.47779977697192 |
+| SGLYMACHR_18_61915849 | GLYMACHR_18 | 61915849 | 3.5195353949114e-05  | 0.438144329896907 | 97   | 0.0744797681115887  | -1.48761165405494 |
+
+## Sesame FarmCPU model 
+
+```ruby
+myY  <- read.table("C://..//..//..//..//processed_sesame_phenotypes.txt", sep = '\t', head = TRUE)
+myG <- read.delim("C://..//..//..//..//sesame_complicated_genotypes.hmp.txt", head = FALSE)
+```
+```ruby
+setwd('C:/../../../FarmCPU_sesame_2')
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="FarmCPU",
+  SNP.FDR = 0.05
+))
+```
+![image](https://user-images.githubusercontent.com/109213422/224057912-16b45025-3a11-4a07-982f-4cbaaed3880f.png)
+
+## Sesame SUPER model 
+
+```ruby
+myY  <- read.table("C://..//..//..//..//processed_sesame_phenotypes.txt", sep = '\t', head = TRUE)
+myG <- read.delim("C://..//..//..//..//sesame_complicated_genotypes.hmp.txt", head = FALSE)
+```
+```ruby
+setwd('C:/../../../SUPER_sesame_2')
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="SUPER",
+  SNP.FDR = 0.05
+))
+```
+![image](https://user-images.githubusercontent.com/109213422/224059719-b53bef48-6978-49ab-a104-d4c7cbff72a5.png)
+
+## Sesame BLINK model 
+
+```ruby
+myY  <- read.table("C://..//..//..//..//processed_sesame_phenotypes.txt", sep = '\t', head = TRUE)
+myG <- read.delim("C://..//..//..//..//sesame_complicated_genotypes.hmp.txt", head = FALSE)
+```
+```ruby
+setwd('C:/../../../BLINK_sesame_2')
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="BLONK",
+  SNP.FDR = 0.05
+))
+```
+![image](https://user-images.githubusercontent.com/109213422/224060054-f872017b-e449-469d-8a7d-01936889e1bc.png)
+
+Time for all model:
+
+|                   | FarmCPU | BLINK  | SUPER    |
+|-------------------|---------|--------|----------|
+| Sesame            | 22.48   | 22.78  | 523.51   |
+| Sesame generated  | 51.53   | 53.19  | 515.22   |
+| Soybean           | 26.54   | 22.34  |  100.06  |
+| Soybean generated | 22.56   | 22.21  | 100.75   |
 
 # FaST-LMM
 Create env:
