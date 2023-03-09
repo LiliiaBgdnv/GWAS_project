@@ -105,7 +105,7 @@ system.time(myGAPIT <- GAPIT(
   SNP.FDR = 0.05
 ))
 ```
-![image](https://user-images.githubusercontent.com/109213422/224044794-05acde16-dc54-4fe2-ad27-971a9e054014.png)
+![image](https://user-images.githubusercontent.com/109213422/224086028-9331de96-40bd-436f-ac26-5a124a0665e6.png)
 
 | SNP                   | Chr         | Pos      | P.value              | MAF               | nobs | H&B.P.Value        | Effect |
 |-----------------------|-------------|----------|----------------------|-------------------|------|--------------------|--------|
