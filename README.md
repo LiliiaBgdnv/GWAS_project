@@ -229,3 +229,21 @@ plink2 --vcf sesame_complicated_genotypes.vcf.gz --make-bed --allow-extra-chr --
 plink2 --vcf soybean_simple_genotypes.vcf.gz --make-bed --allow-extra-chr --out sesame_complicated_genotypes
 ```
 
+# BOLT-LMM
+Prepare the data for use by the model
+```ruby
+bcftools view --header-only soybean_simple_genotypes.vcf | sed 's/##contig=<ID=GLYMAchr_/##contig=<ID=/' | sed 's/##contig=<ID=scaffold_/##contig=<ID=/' > soybean_rename
+awk '{gsub(/^GLYMAchr_/,""); print}' soybean_simple_genotypes.vcf > soybean_rename_chr.vcf
+# Replace the description in soybean_rename_chr.vcf with soybean_rename
+awk '{gsub(/^LG/,""); print}' sesame_complicated_genotypes.vcf > sesame_rename_chr.vcf
+```
+
+Make bed, bim and fam file
+
+```ruby
+plink2 --vcf ~/IB/GWAS_progect/Raw_data/sesame_rename_chr.vcf --make-bed --out sesame_rename_chs
+plink2 --vcf ~/IB/GWAS_progect/Raw_data/soybean_rename_chr.vcf --make-bed --out soybean_rename_chs
+
+./gcta-1.94.1-linux-kernel-3-x86_64/gcta-1.94.1-linux-kernel-3-x86_64/gcta-1.94.1 --bfile sesame_rename_chs --ld-wind 5000 --ld-sig 0.05 --out sesame_ld
+./gcta-1.94.1-linux-kernel-3-x86_64/gcta-1.94.1-linux-kernel-3-x86_64/gcta-1.94.1 --bfile soybean_rename_chs --ld-wind 5000 --ld-sig 0.05 --out soybean_ld
+```
