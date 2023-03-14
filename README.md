@@ -247,3 +247,14 @@ plink2 --vcf ~/IB/GWAS_progect/Raw_data/soybean_rename_chr.vcf --make-bed --out 
 ./gcta-1.94.1-linux-kernel-3-x86_64/gcta-1.94.1-linux-kernel-3-x86_64/gcta-1.94.1 --bfile sesame_rename_chs --ld-wind 5000 --ld-sig 0.05 --out sesame_ld
 ./gcta-1.94.1-linux-kernel-3-x86_64/gcta-1.94.1-linux-kernel-3-x86_64/gcta-1.94.1 --bfile soybean_rename_chs --ld-wind 5000 --ld-sig 0.05 --out soybean_ld
 ```
+# PLINK2 glm
+
+for soybean:
+```ruby
+plink2 --glm allow-no-covars --allow-extra-chr --bed Raw_data/Bed_bim_fam/soybean_simpe_genotypes.bed --bim Raw_data/Bed_bim_fam/soybean_simpe_genotypes.bim --fam Raw_data/Bed_bim_fam/soybean_simpe_genotypes.fam --pheno Raw_data/soy_phenotypes_leu_plink_2col.txt --out plink_result --mac 20 --covar-variance-standardize --freq --threads 32 --memory 100000
+ ```
+ 
+for sesame:
+```ruby
+plink2 --glm allow-no-covars --allow-extra-chr --bed Raw_data/Bed_bim_fam/sesame_complicated_genotypes.bed --bim Raw_data/Bed_bim_fam/sesame_complicated_genotypes.bim --fam Raw_data/Bed_bim_fam/sesame_complicated_genotypes.fam --pheno Raw_data/sesame_phenotypes_leu_BOLT.txt --out plink2_glm/sesame_plink_result --mac 20 --covar-variance-standardize --freq --threads 32 --memory 100000
+```
