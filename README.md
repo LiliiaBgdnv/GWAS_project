@@ -2,8 +2,8 @@
 
 Time for all model:
 
-| FarmCPU           | BLINK  | SUPER  | Plink2 glm |
-|-------------------|--------|--------|------------|
+|                   | FarmCPU| BLINK  | SUPER  | Plink2 glm |
+|-------------------|--------|--------|------------|--------|
 | Sesame            | 22.48s | 22.78s | 523.51s    | 0.277s |
 | Sesame generated  | 51.53s | 53.19s | 515.22s    | 1.578s |
 | Soybean           | 26.54s | 22.34s | 100.06s    | 2.689s |
