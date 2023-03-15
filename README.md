@@ -212,6 +212,25 @@ system.time(myGAPIT <- GAPIT(
 ![image](https://user-images.githubusercontent.com/109213422/224060054-f872017b-e449-469d-8a7d-01936889e1bc.png)
 
 # FaST-LMM
+## First step: prepare the data (on the example of sesame)
+### Sesame phenotypes preprocessing (R)
+```ruby
+sesame_phenotypes <- read.table('C:/Users/Roman/Desktop/IB/GWAS_project/data/sesame_phenotypes_2018_Plant_height_means.tsv ', header = TRUE)
+sesame_phenotypes$V1 <- sesame_phenotypes$Genotype
+sesame_phenotypes <- sesame_phenotypes[c("Genotype", "V1", "mean.Plant.height")]
+
+library("dplyr")
+
+sesame_phenotypes <- sesame_phenotypes %>% 
+        rename("FID" = "Genotype",
+               "IID" = "V1",
+               "Height" = "mean.Plant.height")
+
+           
+write.table(sesame_phenotypes, file='C:/Users/Roman/Desktop/IB/GWAS_project/Fastlmm/sesame/raw_data/sesame_phenotypes_fast.txt', quote=FALSE,
+            sep='\t', row.names = F)
+```
+
 Create env (command line):
 ```ruby
 python3.11 -m venv FaST-LMM
