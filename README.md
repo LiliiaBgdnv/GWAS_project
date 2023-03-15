@@ -230,6 +230,10 @@ sesame_phenotypes <- sesame_phenotypes %>%
 write.table(sesame_phenotypes, file='C:/Users/Roman/Desktop/IB/GWAS_project/Fastlmm/sesame/raw_data/sesame_phenotypes_fast.txt', quote=FALSE,
             sep='\t', row.names = F)
 ```
+### Sesame genotypes preprocessing (command line)
+```ruby
+sed 's/LG//g' sesame_complicated_genotypes_copy.vcf > sesame_complicated_genotypes_no_chrom.vcf
+```
 
 Create env (command line):
 ```ruby
