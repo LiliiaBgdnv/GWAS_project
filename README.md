@@ -11,7 +11,7 @@ Time for all model:
 
 # GAPIT (FarmCPU, MLM, Blink)
 
-**All data there are in folders, but they're in  in zip format**
+**All the data are in the folders, but in zip format**
 
 ## First step: prepare the data for use by the model.
 
