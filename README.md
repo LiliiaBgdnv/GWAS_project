@@ -339,7 +339,7 @@ df_sesame = pd.read_table('plink_glm_2/sesame_plink_result_chr.PH.glm.linear', s
 df_sesame_ad = pd.read_table('plink_glm_2/sesame_plink_result_chr.PH.glm.linear.adjusted', sep="\t")
 df_sesame_merge = df_sesame.merge(df_sesame_ad, on='ID', how='left')
 df_sesame_merge = df_sesame_merge.drop(['#CHROM_y', 'A1_y'], axis='columns')
-df_sesame_merge = df_sesame_merge.rename({'#CHROM_x':'#CHROM', 'A1_y':'A1_x'}, axis='columns')
+df_sesame_merge = df_sesame_merge.rename({'#CHROM_x':'#CHROM', 'A1_x':'A1'}, axis='columns')
 df_sesame_merge
 ```
 Your table must look something like this
@@ -419,7 +419,7 @@ df_sesame_processed = pd.read_table('plink_glm_2/sesame_processed_plink_result_c
 df_sesame_processed_ad = pd.read_table('plink_glm_2/sesame_processed_plink_result_chr.PH.glm.linear.adjusted', sep="\t")
 df_sesame_processed_merge = df_sesame_processed.merge(df_sesame_processed_ad, on='ID', how='left')
 df_sesame_processed_merge = df_sesame_processed_merge.drop(['#CHROM_y', 'A1_y'], axis='columns')
-df_sesame_processed_merge = df_sesame_processed_merge.rename({'#CHROM_x':'#CHROM', 'A1_y':'A1_x'}, axis='columns')
+df_sesame_processed_merge = df_sesame_processed_merge.rename({'#CHROM_x':'#CHROM', 'A1_x':'A1'}, axis='columns')
 df_sesame_processed_merge
 ```
 
