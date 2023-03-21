@@ -5,7 +5,7 @@ Time for all model:
 |                   | FarmCPU| BLINK  | SUPER  | Plink2 glm |
 |-------------------|--------|--------|------------|--------|
 | Sesame            | 39.36s | 33.59s | 126.01s    | 0.277s |
-| Sesame generated  | 51.53s | 53.19s | 515.22s    | 1.578s |
+| Sesame generated  | 24.53 s | 21.90s | 126.31s    | 1.578s |
 | Soybean           | 26.54s | 22.34s | 100.06s    | 2.689s |
 | Soybean generated | 22.56s | 22.21s | 100.75s    | 0.952s |
 
@@ -254,6 +254,70 @@ system.time(myGAPIT <- GAPIT(
 |-------|---|----------|---------------------|-------------------|----|----------------------|------------------|
 | 13039 | 9 | 28490006 | 4.3864778038606e-08 | 0.221649484536082 | 97 | 0.000463153569716961 | 105.772035506385 |
 
+## Sesame generate FarmCPU model 
+Generate:
+```ruby
+library(dplyr)
+sesame_phenotypes <- read.table("C://...//phenotypes_sesame.tsv", header = TRUE)
+min(sesame_phenotypes$pheno)
+max(sesame_phenotypes$pheno)
+mean(sesame_phenotypes$pheno)
+sd(sesame_phenotypes$pheno)
+gen_pheno <- round(rnorm(97, mean=1329.648, sd=170.2138), 13)
+generated_sesame_phenotypes <- as.data.frame(gen_pheno)
+df <- data.frame(sesame_phenotypes$IID, generated_sesame_phenotypes)
+df %>% rename(IID = sesame_phenotypes.IID)
+write.table(df, file='gen_sesame_phenotypes_2.tsv', quote=FALSE, sep='\t')
+```
+```ruby
+myY  <- read.table("C://..//..//..//..//processed_sesame_phenotypes.txt", sep = '\t', head = TRUE)
+myG <- read.delim("C://..//..//..//..//sesame_complicated_genotypes.hmp.txt", head = FALSE)
+```
+```ruby
+setwd('C:/../../../FarmCPU_gen_sesame_2')
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="FarmCPU",
+  SNP.FDR = 0.05
+))
+```
+
+![image](https://user-images.githubusercontent.com/109213422/226716756-2a88f857-cd56-443b-9ffe-ced306043cc3.png)
+
+
+## Sesame generate SUPER model 
+
+```ruby
+setwd('C:/../../../SUPER_gen_sesame_2jdyfz xfcnm')
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="SUPER",
+  SNP.FDR = 0.05
+))
+```
+![image](https://user-images.githubusercontent.com/109213422/226716904-f9ca58d3-cb33-4a4f-8555-d24a26ffe9f8.png)
+
+
+## Sesame generate BLINK model 
+
+```ruby
+setwd('C:/../../../BLINK_gen_sesame_2')
+system.time(myGAPIT <- GAPIT(
+  Y=myY,
+  G=myG,
+  PCA.total=3, 
+  model="BLINK",
+  SNP.FDR = 0.05
+))
+```
+
+![image](https://user-images.githubusercontent.com/109213422/226717047-b2baa1c4-4c0f-4012-921e-bdac07c905ad.png)
+
+
 # FaST-LMM
 ## First step: prepare the data (on the example of sesame)
 ### Sesame phenotypes preprocessing (R)
@@ -371,7 +435,7 @@ if __name__ == "__main__":
 
 (command line)
 ```ruby
-plink2 --glm allow-no-covars --allow-extra-chr --bed sesame_2.bed --bim sesame_2.bim --fam sesame_2.fam --pheno ~/IB/GWAS_progect/Raw_data/phenotypes_sesame.tsv --adjust --out plink_glm_2/sesame_plink_result --covar-variance-standardize --freq --threads 32 --memory 100000
+plink2 --glm allow-no-covars --allow-extra-chr --bed sesame_2.bed --bim sesame_2.bim --fam sesame_2.fam --pheno ~/IB/GWAS_progect/Raw_data/phenotypes_sesame.tsv --adjust --out sesame_plink_result --covar-variance-standardize --freq --threads 32 --memory 100000
 ```
 **Python code:**
 
@@ -401,7 +465,6 @@ Your table must look something like this
 
 ```ruby
 if __name__ == "__main__":
-
     df_sesame_merge = df_sesame_merge.dropna(how="any", axis=0)  # clean data
     ax = manhattanplot(data=df_sesame_merge, pv='FDR_BH')
     plt.savefig("output_manhattan_plot_sesame.png", dpi=300, suggestiveline=1e-2)
@@ -435,7 +498,6 @@ df_soy_processed_merge
 
 ```ruby
 if __name__ == "__main__":
-
     df_soy_processed_merge = df_soy_processed_merge.dropna(how="any", axis=0)  # clean data
     ax = manhattanplot(data=df_soy_processed_merge, pv='FDR_BH', suggestiveline=1e-2)
     plt.savefig("output_manhattan_plot_soy_processed.png", dpi=300)
@@ -447,17 +509,15 @@ if __name__ == "__main__":
 **For sesame processed:**
 (command line)
 ```ruby
-plink2 --glm allow-no-covars --allow-extra-chr --bed Raw_data/Bed_bim_fam/sesame_complicated_genotypes.bed --bim Raw_data/Bed_bim_fam/sesame_complicated_genotypes.bim --fam Raw_data/Bed_bim_fam/sesame_complicated_genotypes.fam --pheno processed_gen_sesame_phenotypes.txt --adjust --out plink_glm_2/sesame_processed_plink_result --covar-variance-standardize --freq --threads 32 --memory 100000
-cd plink_glm_2
-awk '{gsub(/^LG/,""); print}' sesame_processed_plink_result.PH.glm.linear.adjusted > sesame_processed_plink_result_chr.PH.glm.linear.adjusted
-awk '{gsub(/^LG/,""); print}' sesame_processed_plink_result.PH.glm.linear > sesame_processed_plink_result_chr.PH.glm.linear
+plink2 --glm allow-no-covars --allow-extra-chr --bed sesame_gen_2.bed --bim sesame_gen_2.bim --fam sesame_gen_2.fam --pheno gen_sesame_phenotypes_2.tsv --adjust --out sesame_gen_plink_result --covar-variance-standardize --freq --threads 32 --memory 100000
 ```
+
 **Python code:**
 
 ```ruby
 #sesame processed
-df_sesame_processed = pd.read_table('plink_glm_2/sesame_processed_plink_result_chr.PH.glm.linear', sep="\t")
-df_sesame_processed_ad = pd.read_table('plink_glm_2/sesame_processed_plink_result_chr.PH.glm.linear.adjusted', sep="\t")
+df_sesame_processed = pd.read_table('sesame_processed_plink_result_chr.PH.glm.linear', sep="\t")
+df_sesame_processed_ad = pd.read_table('sesame_gen_plink_result.PH.glm.linear.adjusted', sep="\t")
 df_sesame_processed_merge = df_sesame_processed.merge(df_sesame_processed_ad, on='ID', how='left')
 df_sesame_processed_merge = df_sesame_processed_merge.drop(['#CHROM_y', 'A1_y'], axis='columns')
 df_sesame_processed_merge = df_sesame_processed_merge.rename({'#CHROM_x':'#CHROM', 'A1_x':'A1'}, axis='columns')
@@ -466,10 +526,10 @@ df_sesame_processed_merge
 
 ```ruby
 if __name__ == "__main__":
-
     df_sesame_processed_merge = df_sesame_processed_merge.dropna(how="any", axis=0)  # clean data
     ax = manhattanplot(data=df_sesame_processed_merge, pv='FDR_BH', suggestiveline=1e-2)
-    plt.savefig("output_manhattan_plot_sesame_processed.png", dpi=300)
+    plt.savefig("output_manhattan_plot_sesame_gen.png", dpi=300)
 ```
-![output_manhattan_plot_sesame_processed](https://user-images.githubusercontent.com/109213422/225309195-fbc6c982-2936-4b71-ac5c-be049dfbc382.png)
+![image](https://user-images.githubusercontent.com/109213422/226724249-b94a76b0-c0e9-48bb-bf35-9ab25469cbbf.png)
+
 
