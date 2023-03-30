@@ -354,9 +354,8 @@ pip install fastlmm
 
 Installing and using plink (to convert vcf fotmat in bed, bim, fam) (command line):
 ```ruby
-conda install -c bioconda plink2
-plink2 --vcf sesame_complicated_genotypes.vcf.gz --make-bed --allow-extra-chr --out sesame_complicated_genotypes
-plink2 --vcf soybean_simple_genotypes.vcf.gz --make-bed --allow-extra-chr --out sesame_complicated_genotypes
+conda install -c bioconda plink1.9
+plink1.9 --vcf soybean_genotypes.recode_proc_chrom.vcf --make-bed --double-id --pheno soy_phenotypes_leu_fast_processed_mm.txt --out soybean_simple_genotypes_phen_recode1.9
 ```
 
 # BOLT-LMM
