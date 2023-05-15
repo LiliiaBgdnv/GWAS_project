@@ -1,0 +1,49 @@
+##
+## GEMMA Version    = 0.98.5 (2021-08-25)
+## Build profile    = /gnu/store/8rvid272yb53bgascf5c468z0jhsyflj-profile
+## GCC version      = 7.5.0
+## GSL Version      = 2.6
+## OpenBlas         = OpenBLAS 0.3.9  - OpenBLAS 0.3.9 DYNAMIC_ARCH NO_AFFINITY SkylakeX MAX_THREADS=128
+##   arch           = SkylakeX
+##   threads        = 40
+##   parallel type  = threaded
+##
+## Command Line Input = ./gemma -bfile ../bolt/soy_simple -bslmm 1 -o gemma_bslmm_output_simple 
+##
+## Date = Tue Apr 25 21:14:43 2023
+##
+## Summary Statistics:
+## number of total individuals = 249
+## number of analyzed individuals = 238
+## number of covariates = 1
+## number of phenotypes = 1
+## number of total SNPs/var = 23278
+## number of analyzed SNPs/var = 23063
+## REMLE log-likelihood in the null model = -612.53
+## MLE log-likelihood in the null model = -614.509
+## pve estimate in the null model = 0.227338
+## se(pve) in the null model = 0.101123
+## vg estimate in the null model = 0
+## ve estimate in the null model = 0
+## beta estimate in the null model = 
+## se(beta) = 
+## estimated mean = 26.2517
+##
+## MCMC related:
+## initial value of h = 0.227338
+## initial value of rho = 1
+## initial value of pi = 0.000433595
+## initial value of |gamma| = 10
+## random seed = -1
+## acceptance ratio = 0.239834
+##
+## Computation Time:
+## total computation time = 3154.35 min 
+## computation time break down: 
+##      time on calculating relatedness matrix = 0 min 
+##      time on eigen-decomposition = 0.282949 min 
+##      time on calculating UtX = 0.0258136 min 
+##      time on proposal = 0.095371 min 
+##      time on mcmc = 3153.79 min 
+##      time on Omega = 403.379 min 
+##
