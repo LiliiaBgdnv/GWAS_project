@@ -111,7 +111,8 @@ The results of processing are in the [folder](https://github.com/LiliiaBgdnv/GWA
 <img width="1388" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/b4020276-a790-4433-9291-8776beef578b">
 
 **Simple trait**
-![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/82ac00b2-7b9d-47d5-95fc-0da9224c3703)
+<img width="1388" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/23a2986c-5f5e-4d15-b1a5-744dcac58b03">
+
 
 ### Time for all model in seconds:
 | Model      | Dataset 1 (simple trait) | Dataset 2 (complex trait) |
@@ -122,7 +123,7 @@ The results of processing are in the [folder](https://github.com/LiliiaBgdnv/GWA
 | Plink2 glm | 2.689                    | 0.277                     |
 | BSLMM      | 189261                   | 250576.8                  |
 | MLMM       | 1.68                     | 6.875                     |
-|------------|--------------------------|---------------------------|
+
 
 ### Number of intersections in the found significant SNPs for all instruments.
 <img width="615" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/ff5b4c62-0783-4c15-bb95-fe8faab181e6">
