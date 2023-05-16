@@ -93,8 +93,8 @@ wget https://github.com/genetics-statistics/GEMMA/releases/download/v0.98.5/gemm
 ```
 ## Analysis
 
-The [Jupiter notebook](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/Benjamini_Yekutieli.ipynb) has code for calculating the Benjamini-Yekutieli correction and plotting the Manhattan and QQ plots for GAPIT tools and GLM.
-For the generated data, the graphics can be viewed in the Jupiter notebook.
+The [Jupiter notebook](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/Benjamini_Yekutieli.ipynb) contains the code for calculating the Benjamini-Yekutieli correction and plotting the Manhattan and QQ plots for GAPIT tools and GLM.
+For the generated data, the graphics can be found in the Jupiter notebook.
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/bc15a182-bf22-4bb1-82fd-bd864ec3c068)
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/9220e670-5565-4468-b0fc-3da522892f02)
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/42db7742-a88d-4f0b-9d88-129143b2b8b3)
@@ -104,9 +104,9 @@ For the generated data, the graphics can be viewed in the Jupiter notebook.
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/2c21ea70-23ab-43ee-9f0b-c9fe378fe463)
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/60192c43-3ffa-45a4-b4db-fb7c17618897)
 
-The processing of the results of the BSLMM model was different from other models because the result of Bayesian statistics required different processing. For this purpose, the effect sizes for each SNP were calculated for each file and the posterior probability was calculated. Posterior Inclusion Probability (PIP) was calculated as a measure of the strength of the SNP-phenotype association. Based on the PIP, the distribution of linked SNPs across the genome was visualized. The size of the dots reflected the effect size. 
+The processing of the results of the BSLMM model was different from other models because the result of Bayesian statistics required different processing. For this purpose, the effect sizes for each SNP were calculated for each file and the posterior probability was calculated. Posterior Inclusion Probability (PIP) was calculated as a measure of the strength of the SNP-phenotype association. Based on the PIP, the distribution of linked SNPs across the genome was visualized. The size of the dots reflects the effect size. 
 
-The results of processing are in the [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GEMMA_BSLMM/results), [script](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GEMMA_BSLMM/visualization.R) by processing.
+The results of the processing are in the [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GEMMA_BSLMM/results), [script](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GEMMA_BSLMM/visualization.R) by processing.
 
 **Complex trait**
 <img width="1388" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/b4020276-a790-4433-9291-8776beef578b">
