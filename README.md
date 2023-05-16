@@ -108,7 +108,6 @@ For the generated data, the graphics can be found in the Jupiter notebook.
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/248cf1c7-1b5c-42eb-8faf-5e46ca27c8d5)
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/5736ece9-5d33-4181-b44c-4c290650419e)
 
-
 The processing of the results of the BSLMM model differed from other models, because the result of the Bayesian statistics does not contain the p-value calculated for each SNP, but rather contains posterior samples of parameters: random effects (alpha), fixed effects (beta), and sparse effects (gamma). Based on the gamma values for each file, the effect sizes for each SNP were calculated and the posterior probability was calculated. The posterior inclusion probability (PIP) was calculated as a measure of the strength of the association between the SNP and the phenotype. Based on the PIP, the distribution of linked SNPs across the genome was visualized. The size of the dots reflects the magnitude of the effect.
 
 The results of the processing are in the [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GEMMA_BSLMM/results), [script](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GEMMA_BSLMM/visualization.R) by processing.
@@ -126,7 +125,6 @@ As you can see, with a threshold of **0.05 only 1 SNPs were found for the comple
 
 **Complex trait**
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/ea6cfe92-ba6d-4597-a73f-f55d16a023b8)
-
 
 ### Time for all model in seconds:
 | Model      | Dataset 1 (simple trait) | Dataset 2 (complex trait) |
