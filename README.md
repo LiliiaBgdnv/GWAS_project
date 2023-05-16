@@ -67,8 +67,8 @@ plink2 --glm allow-no-covars --allow-extra-chr --bed /plink_glm/inputs/complex_t
 Installation:
 ```ruby
 wget https://github.com/genetics-statistics/GEMMA/releases/download/v0.98.5/gemma-0.98.5-linux-static-AMD64.gz
-``
-### BSLMM
+```
+#### BSLMM
 
 **For simple trait (command line):**
 ```ruby
