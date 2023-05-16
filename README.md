@@ -12,7 +12,8 @@
 
 ## Introduction
 
-The identification of the genetic loci associated with agronomically important phenotypes is a crucial task in plant selection, since it helps to optimize breeding strategies and accelerate crop breeding [1]. Genome-wide association study (GWAS) is a powerful tool commonly used to identify genetic variants responsible for the phenotype of interest. Most GWAS models are developed and optimized using human datasets and have limited application in plant studies, especially when mapping complex traits such as stress tolerance and yield [2]. GWAS in plant species should account for such specific properties of plants as polyploidy, a complex genome, and a complex population structure. 
+The identification of the genetic loci associated with agronomically important phenotypes is a crucial task in plant selection, since it helps to optimize breeding strategies and accelerate crop breeding [1]. Genome-wide association study (GWAS) is a powerful tool commonly used to identify genetic variants responsible for the phenotype of interest. Most GWAS models are developed and optimized using human datasets; however, they have limited application in plant studies, especially when mapping complex traits such as stress tolerance and yield [2]. GWAS in plant species should account for such specific properties of plants as polyploidy, a complex genome, and a complex population structure. 
+
 In this work, we aim to analyze the existing approaches for GWAS analysis in plants, to test them on real data of plant genotypes and phenotypes, and to select the optimal approaches.
 
 1.  Brachi B. Genome-wide association studies in plants: the missing heritability is in the field / B. Brachi, G.P. Morris, J.O. Borevitz // Genome Biology. – 2011. – Vol. 12. – Genome-wide association studies in plants. – № 10. – P. 232.
