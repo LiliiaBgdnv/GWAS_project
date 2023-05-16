@@ -103,16 +103,29 @@ For the generated data, the graphics can be found in the Jupiter notebook.
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/1afa407c-768d-49f6-b393-43844a587fcd)
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/2c21ea70-23ab-43ee-9f0b-c9fe378fe463)
 ![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/60192c43-3ffa-45a4-b4db-fb7c17618897)
+![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/e3a2fc4d-1d14-4865-8c95-85d53f2a94d0)
+![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/44103b0a-b004-4ed6-a0ae-06698f5680ab)
+![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/248cf1c7-1b5c-42eb-8faf-5e46ca27c8d5)
+![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/5736ece9-5d33-4181-b44c-4c290650419e)
 
-The processing of the results of the BSLMM model was different from other models because the result of Bayesian statistics required different processing. For this purpose, the effect sizes for each SNP were calculated for each file and the posterior probability was calculated. Posterior Inclusion Probability (PIP) was calculated as a measure of the strength of the SNP-phenotype association. Based on the PIP, the distribution of linked SNPs across the genome was visualized. The size of the dots reflects the effect size. 
+
+The processing of the results of the BSLMM model differed from other models, because the result of the Bayesian statistics does not contain the p-value calculated for each SNP, but rather contains posterior samples of parameters: random effects (alpha), fixed effects (beta), and sparse effects (gamma). Based on the gamma values for each file, the effect sizes for each SNP were calculated and the posterior probability was calculated. The posterior inclusion probability (PIP) was calculated as a measure of the strength of the association between the SNP and the phenotype. Based on the PIP, the distribution of linked SNPs across the genome was visualized. The size of the dots reflects the magnitude of the effect.
 
 The results of the processing are in the [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GEMMA_BSLMM/results), [script](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GEMMA_BSLMM/visualization.R) by processing.
+
+**Simple trait**
+<img width="1388" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/23a2986c-5f5e-4d15-b1a5-744dcac58b03">
 
 **Complex trait**
 <img width="1388" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/b4020276-a790-4433-9291-8776beef578b">
 
+As you can see, with a threshold of **0.05 only 1 SNPs were found for the complex trait, and no SNPs were found at all for the simple trait**, so we had to lower the threshold to 0.02 for the rest of the analysis in order to compare the SNPs found by each model.
+
 **Simple trait**
-<img width="1388" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/23a2986c-5f5e-4d15-b1a5-744dcac58b03">
+![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/b19e31bc-b854-4569-a280-54f7971d8bb3)
+
+**Complex trait**
+![image](https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/ea6cfe92-ba6d-4597-a73f-f55d16a023b8)
 
 
 ### Time for all model in seconds:
