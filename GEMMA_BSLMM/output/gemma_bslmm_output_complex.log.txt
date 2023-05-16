@@ -8,21 +8,21 @@
 ##   threads        = 40
 ##   parallel type  = threaded
 ##
-## Command Line Input = ./gemma -bfile ../bolt/complex/soy_complex_full -bslmm 1 -o gemma_bslmm_output_complex 
+## Command Line Input = ./gemma -bfile ../bolt/soy_complex_5 -bslmm 1 -o gemma_bslmm_output_complex 
 ##
-## Date = Tue Apr 25 17:14:46 2023
+## Date = Fri Apr 28 19:43:49 2023
 ##
 ## Summary Statistics:
 ## number of total individuals = 97
 ## number of analyzed individuals = 97
 ## number of covariates = 1
 ## number of phenotypes = 1
-## number of total SNPs/var = 31992
-## number of analyzed SNPs/var = 7376
-## REMLE log-likelihood in the null model = -624.201
-## MLE log-likelihood in the null model = -629.889
-## pve estimate in the null model = 0.507581
-## se(pve) in the null model = 0.155567
+## number of total SNPs/var = 31506
+## number of analyzed SNPs/var = 7261
+## REMLE log-likelihood in the null model = -624.296
+## MLE log-likelihood in the null model = -629.991
+## pve estimate in the null model = 0.501609
+## se(pve) in the null model = 0.155297
 ## vg estimate in the null model = 0
 ## ve estimate in the null model = 0
 ## beta estimate in the null model = 
@@ -30,20 +30,20 @@
 ## estimated mean = 1329.65
 ##
 ## MCMC related:
-## initial value of h = 0.507581
-## initial value of rho = 0.830491
-## initial value of pi = 0.00135575
+## initial value of h = 0.501609
+## initial value of rho = 0.839159
+## initial value of pi = 0.00137722
 ## initial value of |gamma| = 10
 ## random seed = -1
-## acceptance ratio = 0.266983
+## acceptance ratio = 0.263971
 ##
 ## Computation Time:
-## total computation time = 1368.69 min 
+## total computation time = 4176.28 min 
 ## computation time break down: 
 ##      time on calculating relatedness matrix = 0 min 
-##      time on eigen-decomposition = 0.0202136 min 
-##      time on calculating UtX = 0.0107066 min 
-##      time on proposal = 0.0482173 min 
-##      time on mcmc = 1368.61 min 
-##      time on Omega = 113.328 min 
+##      time on eigen-decomposition = 0.0619366 min 
+##      time on calculating UtX = 0.0079372 min 
+##      time on proposal = 0.0295521 min 
+##      time on mcmc = 4176.02 min 
+##      time on Omega = 344.122 min 
 ##
