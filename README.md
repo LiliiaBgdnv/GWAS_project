@@ -126,5 +126,5 @@ The results of the processing are in the [folder](https://github.com/LiliiaBgdnv
 | MLMM       | 1.68                     | 6.875                     |
 
 
-### Number of intersections in the found significant SNPs for all instruments.
+### Number of intersections of the significant SNPs identified by the tools.
 <img width="615" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/ff5b4c62-0783-4c15-bb95-fe8faab181e6">
