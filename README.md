@@ -3,7 +3,7 @@
 **Students:**
 >Liliia Bogdanova([github](https://github.com/LiliiaBgdnv), [telegram](http://t.me/bt_despair_and_hope))
 >
->Maria Molodova (github, telegram)
+>Maria Molodova ([github](https://github.com/MaryM12), [telegram](http://t.me/maria_molodova))
 
 **Supervisors:**
 > Elena Grigoreva, NOVA PLANT
@@ -19,6 +19,23 @@ In this work, we aim to analyze the existing approaches for GWAS analysis in pla
 1.  Brachi B. Genome-wide association studies in plants: the missing heritability is in the field / B. Brachi, G.P. Morris, J.O. Borevitz // Genome Biology. – 2011. – Vol. 12. – Genome-wide association studies in plants. – № 10. – P. 232.
 2.  Prioritized candidate causal haplotype blocks in plant genome-wide association studies / X. Wu [et al.] // PLOS Genetics. – 2022. – Vol. 18. – № 10. – P. e1010437.
 
+
+**We have analyzed the literature and selected six models for comparison:**
+
+**BLINK** (Bayesian Linkage and Association with IBD-sharing) is a method that uses Bayesian models to determine the relationship between genotype and phenotype, considering shared inheritance. It can be used for both association and linkage analysis. uses shared inheritance (IBD-sharing) information between individuals for linkage analysis. This can improve the power of analysis, especially in cases where the population structure is complex or unknown.
+
+**FarmCPU** (Fixed and random model Circulating Probability Unification) is an MLM method that accounts for differences in the distribution of effects between genes and also uses random effects to control for population structure. uses mixed models that account for both fixed and random effects for linkage analysis. It can also use a pre-trained model for faster analysis.
+
+**SUPER** (Set-based Unified P-value for Association and Linkage Using Related Samples) is a method that uses MLM with a reduced covariance matrix to account for correlation between traits. It also accounts for linkage information in the sample. uses linkage information and MLM with a reduced covariance matrix to account for correlation between traits. It can also use gene group information for more accurate analysis.
+
+**GLM** is based on generalizing linear regression to cases where the dependent variable (phenotype) does not have a normal distribution. Instead, the dependent variable can have any distribution from an exponential family of distributions, such as a binomial, Poisson, or Gamma distribution. The GLM assumes that the relationship between genotype and phenotype is described not only by a linear relationship, but also by other factors such as age, sex, population structure, etc. In the GLM model, these factors can be accounted for by adding the relevant variables as factors in the regression equation.
+
+**GEMMA (BSLMM)** - uses a Bayesian approach to estimate gene effects. BSLMM incorporates the LASSO model to reduce the number of markers analyzed, which can improve the accuracy of the analysis.
+
+**GEMMA (MVLMM)** - uses multilayer models to account for heterogeneity of gene effects. This can increase the power of the analysis, especially in cases where there are differences in gene effects in different subsets of the sample.
+
+*Each method was run with default parameters.*
+
 ## Running tools
 
 To get the data and code, clone the git repository:
@@ -30,67 +47,86 @@ cd GWAS_project
 
 All **.bed, .bim, .fam** files are made using the program [plink2](https://www.cog-genomics.org/plink/2.0/). You can install it on the website.
 
-### [GAPIT](https://zzlab.net/GAPIT/) (FarmCPU, MLM, Blink)
+### [GAPIT (Version 3)](https://zzlab.net/GAPIT/) (FarmCPU, MLM, Blink)
 All data for the methods are in the "[GAPIT](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GAPIT)" folder, and there is also an [**.rmd** file](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GAPIT/GAPIT.Rmd) with all the work of the three models.
 
 ### PLINK2 glm
-All data is presented in the appropriate [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/plink_glm)
+**All data is presented in the appropriate [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/plink_glm)**
+
+Here we use the `allow-no-covars` flag since we do not have a file with principal component covariates and `--allow-extra-chr` in order to allow work with non-standard chromosome names. The `--adjust flag is used to calculate the p-value with the Bonferroni one-step correction, the Sidak one-step correction, the Bonferroni step-by-step method, the Benjamini/Hochberg FDR correction, the Benjamini/Yekutieli FDR correction
+
+```ruby
+cd plink_glm
+```
 
 **For simple trait (command line):**
 ```ruby
-plink2 --glm allow-no-covars --allow-extra-chr --bed /plink_glm/inputs/simple_trait.bed --bim /plink_glm/inputs/simple_trait.bim --fam /plink_glm/inputs/simple_trait.fam --pheno /plink_glm/inputs/phenotype_simple.txt --adjust cols='chrom','pos','alt','a1','ref','gc','fdrbh' --out /plink_glm/results/simple_glm_result_chr --covar-variance-standardize --freq --threads 32 --memory 100000
-awk '{gsub(/^GLYMAchr_/,""); print}' plink_glm/results/simple_glm_result_chr.Leu.glm.linear.adjusted  > plink_glm/results/simple_glm_result_chr.Leu.glm.linear.adjusted
-awk '{gsub(/^GLYMAchr_/,""); print}' plink_glm/results/simple_glm_result_chr.Leu.glm.linear > plink_glm/results/simple_glm_result_chr.Leu.glm.linear
+plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/simple_trait.bed --bim ./inputs/simple_trait.bim --fam ./inputs/simple_trait.fam --pheno ./inputs/phenotype_simple.txt --adjust cols='chrom','pos','alt','a1','ref','gc','fdrbh' --out ./results/simple_glm_result_chr --covar-variance-standardize --freq --threads 32 --memory 100000
+awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_result_chr.Leu.glm.linear.adjusted  > ./results/simple_glm_result_chr.Leu.glm.linear.adjusted
+awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_result_chr.Leu.glm.linear > plink_glm/results/simple_glm_result_chr.Leu.glm.linear
 ```
 
 **For complex trait (command line):**
-
 ```ruby
-plink2 --glm allow-no-covars --allow-extra-chr --bed /plink_glm/inputs/complex_trait.bed --bim /plink_glm/inputs/complex_trait.bim --fam /plink_glm/inputs/complex_trait.fam --pheno /plink_glm/inputs/phenotypes_complex.tsv --adjust --out /plink_glm/results/complex_glm_result --covar-variance-standardize --freq --threads 32 --memory 100000
+plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/complex_trait.bed --bim ./inputs/complex_trait.bim --fam ./inputs/complex_trait.fam --pheno ./inputs/phenotypes_complex.tsv --adjust --out ./results/complex_glm_result --covar-variance-standardize --freq --threads 32 --memory 100000
 ```
 
 **For simple trait generated data (command line):**
 ```ruby
-plink2 --glm allow-no-covars --allow-extra-chr --bed /plink_glm/inputs/simple_trait.bed --bim /plink_glm/inputs/simple_trait.bim --fam /plink_glm/inputs/simple_trait.fam --pheno /plink_glm/inputs/gen_phenotype_simple.txt --adjust cols='chrom','pos','alt','a1','ref','gc','fdrbh' --out /plink_glm/results/simple_glm_gen_result_chr --covar-variance-standardize --freq --threads 32 --memory 100000
-awk '{gsub(/^GLYMAchr_/,""); print}' plink_glm/results/simple_glm_gen_result_chr.Leu.glm.linear.adjusted  > plink_glm/results/simple_glm_gen_result_chr.Leu.glm.linear.adjusted
-awk '{gsub(/^GLYMAchr_/,""); print}' plink_glm/results/simple_glm_gen_result_chr.Leu.glm.linear > plink_glm/results/simple_glm_gen_result_chr.Leu.glm.linear
+plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/simple_trait.bed --bim ./inputs/simple_trait.bim --fam ./inputs/simple_trait.fam --pheno ./inputs/gen_phenotype_simple.txt --adjust cols='chrom','pos','alt','a1','ref','gc','fdrbh' --out ./results/simple_glm_gen_result_chr --covar-variance-standardize --freq --threads 32 --memory 100000
+awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_gen_result_chr.Leu.glm.linear.adjusted  > ./results/simple_glm_gen_result_chr.Leu.glm.linear.adjusted
+awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_gen_result_chr.Leu.glm.linear > ./results/simple_glm_gen_result_chr.Leu.glm.linear
 ```
 
 **For complex trait generated data (command line):**
 
 ```ruby
-plink2 --glm allow-no-covars --allow-extra-chr --bed /plink_glm/inputs/complex_trait.bed --bim /plink_glm/inputs/complex_trait.bim --fam /plink_glm/inputs/complex_trait.fam --pheno /plink_glm/inputs/gen_phenotypes_complex.tsv --adjust --out /plink_glm/results/complex_glm_gen_result --covar-variance-standardize --freq --threads 32 --memory 100000
+plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/complex_trait.bed --bim ./inputs/complex_trait.bim --fam ./inputs/complex_trait.fam --pheno ./inputs/gen_phenotypes_complex.tsv --adjust --out ./results/complex_glm_gen_result --covar-variance-standardize --freq --threads 32 --memory 100000
 ```
 
-### [GEMMA](https://github.com/genetics-statistics/GEMMA)
+### [GEMMA  v0.98.6](https://github.com/genetics-statistics/GEMMA)
 
 Installation:
 ```ruby
 wget https://github.com/genetics-statistics/GEMMA/releases/download/v0.98.5/gemma-0.98.5-linux-static-AMD64.gz
 ```
+
 #### BSLMM
+```ruby
+cd GEMMA_BSLMM
+```
 
 **For simple trait (command line):**
 ```ruby
-./gemma -bfile inplut/simple_trait -bslmm 1 -o gemma_bslmm_output_simple
+../gemma -bfile input/simple_trait -bslmm 1 -o gemma_bslmm_output_simple
 ```
 
 **For complex trait (command line):**
-
 ```ruby
-./gemma -bfile inplut/complex_trait -bslmm 1 -o gemma_bslmm_output_complex
+../gemma -bfile input/complex_trait -bslmm 1 -o gemma_bslmm_output_complex
 ```
 
 **For simple trait generated data (command line):**
 ```ruby
-./gemma -bfile inplut/simple_generated -bslmm 1 -o gemma_bslmm_output_simple_gen
+../gemma -bfile input/simple_generated -bslmm 1 -o gemma_bslmm_output_simple_gen
 ```
 
 **For complex trait generated data (command line):**
-
 ```ruby
-./gemma -bfile inplut/complex_generated -bslmm 1 -o gemma_bslmm_output_complex_gen
+../gemma -bfile input/complex_generated -bslmm 1 -o gemma_bslmm_output_complex_gen
 ```
+
+#### MVLMM
+```ruby
+cd GEMMA_MVLMM
+```
+```ruby
+# generating the kinship matrix
+../gemma -bfile ./input/[filename] -gk 1 -o kinship_soybean_gen_matrix_centered 
+# running mvlmm
+../gemma -bfile ./input/[filename] -k ./output/kinship_matrix_centered.cXX.txt -lmm 4 -n 1 -o [prefix]
+```
+
 ## Analysis
 
 The [Jupiter notebook](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/Benjamini_Yekutieli.ipynb) contains the code for calculating the Benjamini-Yekutieli correction and plotting the Manhattan and QQ plots for GAPIT tools and GLM.
@@ -139,3 +175,8 @@ As you can see, with a threshold of **0.05 only 1 SNPs were found for the comple
 
 ### Number of intersections of the significant SNPs identified by the tools.
 <img width="615" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/ff5b4c62-0783-4c15-bb95-fe8faab181e6">
+
+## CONCLUSIONS:
+ 1. **SUPER**, implemented in the GAPIT program, performed best when working with the dataset for a **complex trait**. Thus, this method has found 20 adequately annotated sigs, which is the highest number among tested models
+ 2. For the **simple trait**, the **GLM method** implemented in the PLINK program showed itself in the best way, it found the greatest number of adequately annotated sieps, namely 7 pieces.
+ 3. In the future it is planned to test these models with the selected parameters, to improve the quality of the analysis.
