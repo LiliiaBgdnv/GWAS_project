@@ -1,0 +1,115 @@
+2	2413139	2414139	2	Glycine_max_v2.1	chromosome	1	48577505	.	.	.	ID=chromosome:2;Alias=CM000835.3,chr2,CM000835.2,NC_016089.2	1000
+4	49623657	49624657	4	ena	gene	49623094	49626512	.	-	.	ID=gene:GLYMA_04G226700;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_04G226700;logic_name=ena	1000
+4	49623657	49624657	4	ena	mRNA	49623094	49626512	.	-	.	ID=transcript:KRH64276;Parent=gene:GLYMA_04G226700;biotype=protein_coding;transcript_id=KRH64276	1000
+4	49623657	49624657	4	ena	exon	49623094	49623692	.	-	.	Parent=transcript:KRH64276;Name=KRH64276-6;constitutive=0;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH64276-6;rank=6	35
+4	49623657	49624657	4	ena	CDS	49623402	49623692	.	-	0	ID=CDS:KRH64276;Parent=transcript:KRH64276;protein_id=KRH64276	35
+4	49623657	49624657	4	ena	exon	49623773	49624192	.	-	.	Parent=transcript:KRH64276;Name=KRH64275-5;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-5;rank=5	420
+4	49623657	49624657	4	ena	CDS	49623773	49624192	.	-	0	ID=CDS:KRH64276;Parent=transcript:KRH64276;protein_id=KRH64276	420
+4	49623657	49624657	4	ena	exon	49624354	49624665	.	-	.	Parent=transcript:KRH64276;Name=KRH64275-4;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-4;rank=4	304
+4	49623657	49624657	4	ena	CDS	49624354	49624665	.	-	0	ID=CDS:KRH64276;Parent=transcript:KRH64276;protein_id=KRH64276	304
+4	49623657	49624657	4	ena	mRNA	49623402	49626270	.	-	.	ID=transcript:KRH64275;Parent=gene:GLYMA_04G226700;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH64275	1000
+4	49623657	49624657	4	ena	exon	49623402	49623692	.	-	.	Parent=transcript:KRH64275;Name=KRH64275-6;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-6;rank=6	35
+4	49623657	49624657	4	ena	CDS	49623402	49623692	.	-	0	ID=CDS:KRH64275;Parent=transcript:KRH64275;protein_id=KRH64275	35
+4	49623657	49624657	4	ena	exon	49623773	49624192	.	-	.	Parent=transcript:KRH64275;Name=KRH64275-5;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-5;rank=5	420
+4	49623657	49624657	4	ena	CDS	49623773	49624192	.	-	0	ID=CDS:KRH64275;Parent=transcript:KRH64275;protein_id=KRH64275	420
+4	49623657	49624657	4	ena	exon	49624354	49624665	.	-	.	Parent=transcript:KRH64275;Name=KRH64275-4;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-4;rank=4	304
+4	49623657	49624657	4	ena	CDS	49624354	49624665	.	-	0	ID=CDS:KRH64275;Parent=transcript:KRH64275;protein_id=KRH64275	304
+4	49623657	49624657	4	ena	mRNA	49623734	49626512	.	-	.	ID=transcript:KRH64277;Parent=gene:GLYMA_04G226700;biotype=protein_coding;transcript_id=KRH64277	924
+4	49623657	49624657	4	ena	three_prime_UTR	49623734	49624305	.	-	.	Parent=transcript:KRH64277	572
+4	49623657	49624657	4	ena	exon	49623734	49624665	.	-	.	Parent=transcript:KRH64277;Name=KRH64277-4;constitutive=0;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH64277-4;rank=4	924
+4	49623657	49624657	4	ena	CDS	49624306	49624665	.	-	0	ID=CDS:KRH64277;Parent=transcript:KRH64277;protein_id=KRH64277	352
+4	49623657	49624657	4	ena	mRNA	49624306	49626270	.	-	.	ID=transcript:KRH64278;Parent=gene:GLYMA_04G226700;biotype=protein_coding;transcript_id=KRH64278	352
+4	49623657	49624657	4	ena	exon	49624306	49624665	.	-	.	Parent=transcript:KRH64278;Name=KRH64278-4;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64278-4;rank=4	352
+4	49623657	49624657	4	ena	CDS	49624306	49624665	.	-	0	ID=CDS:KRH64278;Parent=transcript:KRH64278;protein_id=KRH64278	352
+4	49623657	49624657	4	Glycine_max_v2.1	chromosome	1	52389146	.	.	.	ID=chromosome:4;Alias=CM000837.3,chr4,CM000837.2,NC_016091.2	1000
+4	49623672	49624672	4	ena	gene	49623094	49626512	.	-	.	ID=gene:GLYMA_04G226700;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_04G226700;logic_name=ena	1000
+4	49623672	49624672	4	ena	mRNA	49623094	49626512	.	-	.	ID=transcript:KRH64276;Parent=gene:GLYMA_04G226700;biotype=protein_coding;transcript_id=KRH64276	1000
+4	49623672	49624672	4	ena	exon	49623094	49623692	.	-	.	Parent=transcript:KRH64276;Name=KRH64276-6;constitutive=0;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH64276-6;rank=6	20
+4	49623672	49624672	4	ena	CDS	49623402	49623692	.	-	0	ID=CDS:KRH64276;Parent=transcript:KRH64276;protein_id=KRH64276	20
+4	49623672	49624672	4	ena	exon	49623773	49624192	.	-	.	Parent=transcript:KRH64276;Name=KRH64275-5;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-5;rank=5	420
+4	49623672	49624672	4	ena	CDS	49623773	49624192	.	-	0	ID=CDS:KRH64276;Parent=transcript:KRH64276;protein_id=KRH64276	420
+4	49623672	49624672	4	ena	exon	49624354	49624665	.	-	.	Parent=transcript:KRH64276;Name=KRH64275-4;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-4;rank=4	312
+4	49623672	49624672	4	ena	CDS	49624354	49624665	.	-	0	ID=CDS:KRH64276;Parent=transcript:KRH64276;protein_id=KRH64276	312
+4	49623672	49624672	4	ena	mRNA	49623402	49626270	.	-	.	ID=transcript:KRH64275;Parent=gene:GLYMA_04G226700;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH64275	1000
+4	49623672	49624672	4	ena	exon	49623402	49623692	.	-	.	Parent=transcript:KRH64275;Name=KRH64275-6;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-6;rank=6	20
+4	49623672	49624672	4	ena	CDS	49623402	49623692	.	-	0	ID=CDS:KRH64275;Parent=transcript:KRH64275;protein_id=KRH64275	20
+4	49623672	49624672	4	ena	exon	49623773	49624192	.	-	.	Parent=transcript:KRH64275;Name=KRH64275-5;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-5;rank=5	420
+4	49623672	49624672	4	ena	CDS	49623773	49624192	.	-	0	ID=CDS:KRH64275;Parent=transcript:KRH64275;protein_id=KRH64275	420
+4	49623672	49624672	4	ena	exon	49624354	49624665	.	-	.	Parent=transcript:KRH64275;Name=KRH64275-4;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64275-4;rank=4	312
+4	49623672	49624672	4	ena	CDS	49624354	49624665	.	-	0	ID=CDS:KRH64275;Parent=transcript:KRH64275;protein_id=KRH64275	312
+4	49623672	49624672	4	ena	mRNA	49623734	49626512	.	-	.	ID=transcript:KRH64277;Parent=gene:GLYMA_04G226700;biotype=protein_coding;transcript_id=KRH64277	939
+4	49623672	49624672	4	ena	three_prime_UTR	49623734	49624305	.	-	.	Parent=transcript:KRH64277	572
+4	49623672	49624672	4	ena	exon	49623734	49624665	.	-	.	Parent=transcript:KRH64277;Name=KRH64277-4;constitutive=0;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH64277-4;rank=4	932
+4	49623672	49624672	4	ena	CDS	49624306	49624665	.	-	0	ID=CDS:KRH64277;Parent=transcript:KRH64277;protein_id=KRH64277	360
+4	49623672	49624672	4	ena	mRNA	49624306	49626270	.	-	.	ID=transcript:KRH64278;Parent=gene:GLYMA_04G226700;biotype=protein_coding;transcript_id=KRH64278	367
+4	49623672	49624672	4	ena	exon	49624306	49624665	.	-	.	Parent=transcript:KRH64278;Name=KRH64278-4;constitutive=0;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH64278-4;rank=4	360
+4	49623672	49624672	4	ena	CDS	49624306	49624665	.	-	0	ID=CDS:KRH64278;Parent=transcript:KRH64278;protein_id=KRH64278	360
+4	49623672	49624672	4	Glycine_max_v2.1	chromosome	1	52389146	.	.	.	ID=chromosome:4;Alias=CM000837.3,chr4,CM000837.2,NC_016091.2	1000
+5	4683901	4684901	5	ena	five_prime_UTR	4684698	4685589	.	+	.	Parent=transcript:KRH57293	204
+5	4683901	4684901	5	ena	exon	4684698	4685595	.	+	.	Parent=transcript:KRH57293;Name=KRH57293-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH57293-1;rank=1	204
+5	4683901	4684901	5	ena	gene	4684698	4686754	.	+	.	ID=gene:GLYMA_05G052200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_05G052200;logic_name=ena	204
+5	4683901	4684901	5	ena	mRNA	4684698	4686754	.	+	.	ID=transcript:KRH57293;Parent=gene:GLYMA_05G052200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH57293	204
+5	4683901	4684901	5	Glycine_max_v2.1	chromosome	1	42234498	.	.	.	ID=chromosome:5;Alias=chr5,CM000838.2,NC_016092.2	1000
+5	4683977	4684977	5	ena	five_prime_UTR	4684698	4685589	.	+	.	Parent=transcript:KRH57293	280
+5	4683977	4684977	5	ena	exon	4684698	4685595	.	+	.	Parent=transcript:KRH57293;Name=KRH57293-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH57293-1;rank=1	280
+5	4683977	4684977	5	ena	gene	4684698	4686754	.	+	.	ID=gene:GLYMA_05G052200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_05G052200;logic_name=ena	280
+5	4683977	4684977	5	ena	mRNA	4684698	4686754	.	+	.	ID=transcript:KRH57293;Parent=gene:GLYMA_05G052200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH57293	280
+5	4683977	4684977	5	Glycine_max_v2.1	chromosome	1	42234498	.	.	.	ID=chromosome:5;Alias=chr5,CM000838.2,NC_016092.2	1000
+5	4684143	4685143	5	ena	five_prime_UTR	4684698	4685589	.	+	.	Parent=transcript:KRH57293	446
+5	4684143	4685143	5	ena	exon	4684698	4685595	.	+	.	Parent=transcript:KRH57293;Name=KRH57293-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH57293-1;rank=1	446
+5	4684143	4685143	5	ena	gene	4684698	4686754	.	+	.	ID=gene:GLYMA_05G052200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_05G052200;logic_name=ena	446
+5	4684143	4685143	5	ena	mRNA	4684698	4686754	.	+	.	ID=transcript:KRH57293;Parent=gene:GLYMA_05G052200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH57293	446
+5	4684143	4685143	5	Glycine_max_v2.1	chromosome	1	42234498	.	.	.	ID=chromosome:5;Alias=chr5,CM000838.2,NC_016092.2	1000
+7	17510624	17511624	7	ena	gene	17510797	17513769	.	-	.	ID=gene:GLYMA_07G146400;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_07G146400;logic_name=ena	828
+7	17510624	17511624	7	ena	mRNA	17510797	17513769	.	-	.	ID=transcript:KRH49299;Parent=gene:GLYMA_07G146400;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH49299	828
+7	17510624	17511624	7	ena	three_prime_UTR	17510797	17510996	.	-	.	Parent=transcript:KRH49299	200
+7	17510624	17511624	7	ena	exon	17510797	17511486	.	-	.	Parent=transcript:KRH49299;Name=KRH49299-9;constitutive=0;ensembl_end_phase=2;ensembl_phase=2;exon_id=KRH49299-9;rank=9	690
+7	17510624	17511624	7	ena	CDS	17510997	17511486	.	-	1	ID=CDS:KRH49299;Parent=transcript:KRH49299;protein_id=KRH49299	490
+7	17510624	17511624	7	ena	mRNA	17510797	17513769	.	-	.	ID=transcript:KRH49301;Parent=gene:GLYMA_07G146400;biotype=protein_coding;transcript_id=KRH49301	828
+7	17510624	17511624	7	ena	three_prime_UTR	17510797	17510996	.	-	.	Parent=transcript:KRH49301	200
+7	17510624	17511624	7	ena	exon	17510797	17511486	.	-	.	Parent=transcript:KRH49301;Name=KRH49299-9;constitutive=0;ensembl_end_phase=2;ensembl_phase=2;exon_id=KRH49299-9;rank=8	690
+7	17510624	17511624	7	ena	CDS	17510997	17511486	.	-	1	ID=CDS:KRH49301;Parent=transcript:KRH49301;protein_id=KRH49301	490
+7	17510624	17511624	7	ena	mRNA	17510997	17512618	.	-	.	ID=transcript:KRH49302;Parent=gene:GLYMA_07G146400;biotype=protein_coding;transcript_id=KRH49302	628
+7	17510624	17511624	7	ena	exon	17510997	17511486	.	-	.	Parent=transcript:KRH49302;Name=KRH49302-7;constitutive=0;ensembl_end_phase=0;ensembl_phase=2;exon_id=KRH49302-7;rank=7	490
+7	17510624	17511624	7	ena	CDS	17510997	17511486	.	-	1	ID=CDS:KRH49302;Parent=transcript:KRH49302;protein_id=KRH49302	490
+7	17510624	17511624	7	ena	mRNA	17510997	17512618	.	-	.	ID=transcript:KRH49303;Parent=gene:GLYMA_07G146400;biotype=protein_coding;transcript_id=KRH49303	628
+7	17510624	17511624	7	ena	exon	17510997	17511486	.	-	.	Parent=transcript:KRH49303;Name=KRH49302-7;constitutive=0;ensembl_end_phase=0;ensembl_phase=2;exon_id=KRH49302-7;rank=7	490
+7	17510624	17511624	7	ena	CDS	17510997	17511486	.	-	1	ID=CDS:KRH49303;Parent=transcript:KRH49303;protein_id=KRH49303	490
+7	17510624	17511624	7	ena	mRNA	17510997	17512806	.	-	.	ID=transcript:KRH49300;Parent=gene:GLYMA_07G146400;biotype=protein_coding;transcript_id=KRH49300	628
+7	17510624	17511624	7	ena	exon	17510997	17511486	.	-	.	Parent=transcript:KRH49300;Name=KRH49302-7;constitutive=0;ensembl_end_phase=0;ensembl_phase=2;exon_id=KRH49302-7;rank=8	490
+7	17510624	17511624	7	ena	CDS	17510997	17511486	.	-	1	ID=CDS:KRH49300;Parent=transcript:KRH49300;protein_id=KRH49300	490
+7	17510624	17511624	7	Glycine_max_v2.1	chromosome	1	44630646	.	.	.	ID=chromosome:7;Alias=CM000840.3,chr7,CM000840.2,NC_016094.2	1000
+7	17518306	17519306	7	ena	gene	17518268	17519044	.	+	.	ID=gene:GLYMA_07G146500;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_07G146500;logic_name=ena	738
+7	17518306	17519306	7	ena	mRNA	17518268	17519044	.	+	.	ID=transcript:KRH49304;Parent=gene:GLYMA_07G146500;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH49304	738
+7	17518306	17519306	7	ena	five_prime_UTR	17518268	17518390	.	+	.	Parent=transcript:KRH49304	84
+7	17518306	17519306	7	ena	exon	17518268	17519044	.	+	.	Parent=transcript:KRH49304;Name=KRH49304-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH49304-1;rank=1	738
+7	17518306	17519306	7	ena	CDS	17518391	17518774	.	+	0	ID=CDS:KRH49304;Parent=transcript:KRH49304;protein_id=KRH49304	384
+7	17518306	17519306	7	ena	three_prime_UTR	17518775	17519044	.	+	.	Parent=transcript:KRH49304	270
+7	17518306	17519306	7	Glycine_max_v2.1	chromosome	1	44630646	.	.	.	ID=chromosome:7;Alias=CM000840.3,chr7,CM000840.2,NC_016094.2	1000
+7	17902194	17903194	7	ena	gene	17899814	17903389	.	-	.	ID=gene:GLYMA_07G148800;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_07G148800;logic_name=ena	1000
+7	17902194	17903194	7	ena	mRNA	17899814	17903389	.	-	.	ID=transcript:KRH49360;Parent=gene:GLYMA_07G148800;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH49360	1000
+7	17902194	17903194	7	ena	exon	17902012	17903389	.	-	.	Parent=transcript:KRH49360;Name=KRH49360-1;constitutive=1;ensembl_end_phase=1;ensembl_phase=0;exon_id=KRH49360-1;rank=1	1000
+7	17902194	17903194	7	ena	five_prime_UTR	17902178	17903389	.	-	.	Parent=transcript:KRH49360	1000
+7	17902194	17903194	7	Glycine_max_v2.1	chromosome	1	44630646	.	.	.	ID=chromosome:7;Alias=CM000840.3,chr7,CM000840.2,NC_016094.2	1000
+7	17902249	17903249	7	ena	gene	17899814	17903389	.	-	.	ID=gene:GLYMA_07G148800;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_07G148800;logic_name=ena	1000
+7	17902249	17903249	7	ena	mRNA	17899814	17903389	.	-	.	ID=transcript:KRH49360;Parent=gene:GLYMA_07G148800;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH49360	1000
+7	17902249	17903249	7	ena	exon	17902012	17903389	.	-	.	Parent=transcript:KRH49360;Name=KRH49360-1;constitutive=1;ensembl_end_phase=1;ensembl_phase=0;exon_id=KRH49360-1;rank=1	1000
+7	17902249	17903249	7	ena	five_prime_UTR	17902178	17903389	.	-	.	Parent=transcript:KRH49360	1000
+7	17902249	17903249	7	Glycine_max_v2.1	chromosome	1	44630646	.	.	.	ID=chromosome:7;Alias=CM000840.3,chr7,CM000840.2,NC_016094.2	1000
+7	17902283	17903283	7	ena	gene	17899814	17903389	.	-	.	ID=gene:GLYMA_07G148800;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_07G148800;logic_name=ena	1000
+7	17902283	17903283	7	ena	mRNA	17899814	17903389	.	-	.	ID=transcript:KRH49360;Parent=gene:GLYMA_07G148800;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH49360	1000
+7	17902283	17903283	7	ena	exon	17902012	17903389	.	-	.	Parent=transcript:KRH49360;Name=KRH49360-1;constitutive=1;ensembl_end_phase=1;ensembl_phase=0;exon_id=KRH49360-1;rank=1	1000
+7	17902283	17903283	7	ena	five_prime_UTR	17902178	17903389	.	-	.	Parent=transcript:KRH49360	1000
+7	17902283	17903283	7	Glycine_max_v2.1	chromosome	1	44630646	.	.	.	ID=chromosome:7;Alias=CM000840.3,chr7,CM000840.2,NC_016094.2	1000
+7	18592804	18593804	7	ena	gene	18589805	18594012	.	+	.	ID=gene:GLYMA_07G152700;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_07G152700;logic_name=ena	1000
+7	18592804	18593804	7	ena	mRNA	18589805	18594012	.	+	.	ID=transcript:KRH49413;Parent=gene:GLYMA_07G152700;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH49413	1000
+7	18592804	18593804	7	ena	exon	18592872	18593008	.	+	.	Parent=transcript:KRH49413;Name=KRH49413-6;constitutive=1;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH49413-6;rank=6	137
+7	18592804	18593804	7	ena	CDS	18592872	18593008	.	+	0	ID=CDS:KRH49413;Parent=transcript:KRH49413;protein_id=KRH49413	137
+7	18592804	18593804	7	ena	exon	18593110	18593201	.	+	.	Parent=transcript:KRH49413;Name=KRH49413-7;constitutive=1;ensembl_end_phase=1;ensembl_phase=2;exon_id=KRH49413-7;rank=7	92
+7	18592804	18593804	7	ena	CDS	18593110	18593201	.	+	1	ID=CDS:KRH49413;Parent=transcript:KRH49413;protein_id=KRH49413	92
+7	18592804	18593804	7	ena	exon	18593293	18593472	.	+	.	Parent=transcript:KRH49413;Name=KRH49413-8;constitutive=1;ensembl_end_phase=1;ensembl_phase=1;exon_id=KRH49413-8;rank=8	180
+7	18592804	18593804	7	ena	CDS	18593293	18593472	.	+	2	ID=CDS:KRH49413;Parent=transcript:KRH49413;protein_id=KRH49413	180
+7	18592804	18593804	7	ena	CDS	18593635	18593714	.	+	2	ID=CDS:KRH49413;Parent=transcript:KRH49413;protein_id=KRH49413	80
+7	18592804	18593804	7	ena	exon	18593635	18594012	.	+	.	Parent=transcript:KRH49413;Name=KRH49413-9;constitutive=1;ensembl_end_phase=1;ensembl_phase=1;exon_id=KRH49413-9;rank=9	170
+7	18592804	18593804	7	ena	three_prime_UTR	18593715	18594012	.	+	.	Parent=transcript:KRH49413	90
+7	18592804	18593804	7	Glycine_max_v2.1	chromosome	1	44630646	.	.	.	ID=chromosome:7;Alias=CM000840.3,chr7,CM000840.2,NC_016094.2	1000
