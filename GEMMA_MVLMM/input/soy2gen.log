@@ -1,0 +1,32 @@
+PLINK v1.90b6.22 64-bit (3 Nov 2020)
+Options in effect:
+  --allow-extra-chr
+  --double-id
+  --make-bed
+  --out soy2gen
+  --pheno soy2_gen_phenotypes_fast.txt
+  --vcf genotypes_soy2_processed.vcf
+
+Hostname: DESKTOP-8KVIEQA
+Working directory: /home/maria
+Start time: Wed May  3 21:02:46 2023
+
+Random number seed: 1683136966
+6239 MB RAM detected; reserving 3119 MB for main workspace.
+--vcf: soy2gen-temporary.bed + soy2gen-temporary.bim + soy2gen-temporary.fam
+written.
+31676 variants loaded from .bim file.
+97 people (0 males, 0 females, 97 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to soy2gen.nosex .
+97 phenotype values present after --pheno.
+Warning: Ignoring phenotypes of missing-sex samples.  If you don't want those
+phenotypes to be ignored, use the --allow-no-sex flag.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 97 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.871104.
+31676 variants and 97 people pass filters and QC.
+Phenotype data is quantitative.
+--make-bed to soy2gen.bed + soy2gen.bim + soy2gen.fam ... done.
+
+End time: Wed May  3 21:02:47 2023
