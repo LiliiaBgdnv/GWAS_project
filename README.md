@@ -52,7 +52,7 @@ Also to check for false positives, files were generated for the models in which 
 7.  Xiang Zhou, Peter Carbonetto and Matthew Stephens (2013). Polygenic modeling with bayesian sparse linear mixed models. PLoS Genetics 9, e1003264.
 8.  Xiang Zhou and Matthew Stephens (2014). Efficient multivariate linear mixed model algorithms for genome-wide association studies. Nature Methods 11, 407–409.
 
-## Running tools
+## Running the tools
 
 To get the data and code, clone the git repository:
 
@@ -62,10 +62,10 @@ cd GWAS_project
 ```
 
 ### [GAPIT (Version 3)](https://zzlab.net/GAPIT/) (FarmCPU, MLM, Blink)
-All data for the methods are in the "[GAPIT](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GAPIT)" folder, and there is also an [**.rmd** file](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GAPIT/GAPIT.Rmd) with all the work of the three models. Here we also use files with the extension ".hmp.txt". Conversion of genotype data from vcf format to hapmap was performed in the [TASSEL 5](https://tassel.bitbucket.io/) program. 
+All the data for the methods is in the "[GAPIT](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GAPIT)" folder, and there is also an [**.rmd** file](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GAPIT/GAPIT.Rmd) with all the work of the three models. Here we also use files with the extension ".hmp.txt". Conversion of genotype data from vcf format to hapmap was performed in the [TASSEL 5](https://tassel.bitbucket.io/) program. 
  
 ### PLINK2 glm
-**All data is presented in the appropriate [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/plink_glm)**
+**All the data is presented in the appropriate [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/plink_glm)**
 
 Here we use the `allow-no-covars` flag since we do not have a file with principal component covariates and `--allow-extra-chr` in order to allow work with non-standard chromosome names. The `--adjust flag is used to calculate the p-value with the Bonferroni one-step correction, the Sidak one-step correction, the Bonferroni step-by-step method, the Benjamini/Hochberg FDR correction, the Benjamini/Yekutieli FDR correction
 
@@ -246,7 +246,7 @@ As you can see, with a threshold of **0.05 only 1 SNPs were found for the comple
 
 <img width="1057" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/96f35edf-fe84-4127-97a8-95e66a0405ee">
 
-## Annotation of found SNPs
+## Annotation of the identified SNPs
 The SNPs found by the program were annotated in the following steps:
 1) Selection of found SNPs with p-value < 0.05 for the complex trait or p-value < 0.1 for the simple trait (for the BSLMM model PIP > 0.02). 
 2) For each SNP, its chromosome number, its coordinate - 500bp and its coordinate + 500bp are taken and written into a .bed file. We investigate exactly the gaps around the SNPs found, because the model can predict not only SNPs in the protein-coding gene, but also the associated genes if the SNPs found are in the decoding gene. This and the previous step are done in [Jupiter notebook](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/Benjamini_Yekutieli.ipynb).
