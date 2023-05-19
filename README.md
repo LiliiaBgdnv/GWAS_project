@@ -113,7 +113,7 @@ plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/complex_trait.bed 
 
 ### [GEMMA  v0.98.6](https://github.com/genetics-statistics/GEMMA)
 
-For this model, we prepared other genotype and phenotype files, changing the names so that they contain only numbers, the retrained files are in the [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GEMMA_BSLMM/data_using_for_create_bim).
+For this model, we prepared other genotype and phenotype files, changing the chromosome names so that they contain only numbers, the processed files are in the [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GEMMA_BSLMM/data_using_for_create_bim).
 
 Installation:
 ```ruby
