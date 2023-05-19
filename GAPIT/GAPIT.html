@@ -356,6 +356,20 @@ display: none;
 </div>
 
 
+<div id="first-install-the-working-directory-gwas_projectgapit" class="section level1">
+<h1>First, install the working directory GWAS_project/GAPIT/</h1>
+<div id="generation-of-genotype-files-with-a-normal-distribution." class="section level2">
+<h2>Generation of genotype files with a normal distribution.</h2>
+<pre class="r"><code># Simple
+phenotypes_simple &lt;- read.table(&#39;../Raw_data/phenotypes_simple_trait.tsv&#39;, header = TRUE, sep=&#39;\t&#39;)
+phenotypes_simple$Leu &lt;- round(rnorm(249, mean=mean(phenotypes_simple$Leu, na.rm = T), sd=sd(phenotypes_simple$Leu, na.rm = T)), 1)
+write.table(phenotypes_simple, file=&#39;../Raw_data/phenotypes_simple_trait_gen.tsv&#39;, quote=FALSE, sep=&#39;\t&#39;, row.names=FALSE)
+
+# Complex
+phenotypes_complex &lt;- read.table(&#39;../Raw_data/phenotypes_complex_trait.tsv&#39;, header = TRUE, sep=&#39;\t&#39;)
+phenotypes_complex$gen_pheno &lt;- round(rnorm(97, mean=mean(phenotypes_complex$pheno, na.rm = T), sd=sd(phenotypes_complex$pheno, na.rm = T)), 1)
+phenotypes_complex &lt;- subset(phenotypes_complex, select = -pheno)
+write.table(phenotypes_complex, file=&#39;../Raw_data/phenotypes_complex_trait_gen.tsv&#39;, quote=FALSE, sep=&#39;\t&#39;, row.names=FALSE)</code></pre>
 <p>Download GAPIT.</p>
 <pre class="r"><code>invisible(source(&quot;http://zzlab.net/GAPIT/GAPIT.library.R&quot;))</code></pre>
 <pre><code>## Error in dyn.load(dynlib &lt;- getDynlib(dir)) : 
@@ -365,13 +379,16 @@ display: none;
 ##   Reason: tried: &#39;/opt/X11/lib/libGLU.1.dylib&#39; (no such file), &#39;/System/Volumes/Preboot/Cryptexes/OS/opt/X11/lib/libGLU.1.dylib&#39; (no such file), &#39;/opt/X11/lib/libGLU.1.dylib&#39; (no such file), &#39;/Library/Frameworks/R.framework/Resources/lib/libGLU.1.dylib&#39; (no such file), &#39;/Library/Java/JavaVirtualMachines/jdk-17.0.1+12/Contents/Home/lib/server/libGLU.1.dylib&#39; (no such file)
 ## 
 ## The downloaded binary packages are in
-##  /var/folders/w7/s5mnqhhn0r5ddff08b303s3c0000gn/T//RtmpBQ3MSU/downloaded_packages</code></pre>
+##  /var/folders/w7/s5mnqhhn0r5ddff08b303s3c0000gn/T//RtmpG20bhn/downloaded_packages</code></pre>
 <pre class="r"><code>invisible(source(&quot;http://zzlab.net/GAPIT/gapit_functions.txt&quot;))</code></pre>
 <p>Prepare the data in the variables for the simple trait. Here myY is
 the phenotype data, myG is the genotype data.</p>
-<pre class="r"><code>myY  &lt;- read.table(&quot;./input/phenotype_simple.txt&quot;, sep = &#39;\t&#39;, head = TRUE)
+<pre class="r"><code>phenotypes_simple &lt;- read.table(&quot;../Raw_data/phenotypes_simple_trait.tsv&quot;, sep = &#39;\t&#39;, head = TRUE)
+myY &lt;- subset(phenotypes_simple, select = -FID)
 myG &lt;- read.delim(&quot;./input/genotype_simple.hmp.txt&quot;, head = FALSE)
 myG[,1]=c(&quot;rs&quot;,1:(nrow(myG)-1))</code></pre>
+</div>
+</div>
 <div id="simple-trait" class="section level1">
 <h1>Simple trait</h1>
 <div id="farmcpu-for-simple-trait" class="section level4">
@@ -408,9 +425,10 @@ system.time(myGAPIT &lt;- GAPIT(
 ))</code></pre>
 </div>
 </div>
-<div id="generated-values-for-a-simple-trait." class="section level1">
-<h1>Generated values for a simple trait.</h1>
-<pre class="r"><code>myY  &lt;- read.table(&quot;./input/phenotype_simple_generated.txt&quot;, sep = &#39;\t&#39;, head = TRUE)</code></pre>
+<div id="generated-data-for-a-simple-trait." class="section level1">
+<h1>Generated data for a simple trait.</h1>
+<pre class="r"><code>phenotypes_simple_gen &lt;- read.table(&quot;../Raw_data/phenotypes_simple_trait_gen.tsv&quot;, sep = &#39;\t&#39;, head = TRUE)
+myY &lt;- subset(phenotypes_simple_gen, select = -FID)</code></pre>
 <div id="farmcpu-for-simple-trait-generated" class="section level4">
 <h4>FarmCPU for simple trait generated</h4>
 <pre class="r"><code>setwd(&#39;./FarmCPU_simple_gen&#39;)
@@ -447,7 +465,7 @@ system.time(myGAPIT &lt;- GAPIT(
 </div>
 <div id="complex-trait" class="section level1">
 <h1>Complex trait</h1>
-<pre class="r"><code>myY  &lt;- read.table(&quot;./input/phenotype_complex.tsv&quot;, sep = &#39;\t&#39;, head = TRUE)
+<pre class="r"><code>myY  &lt;- read.table(&quot;../Raw_data/phenotypes_complex_trait.tsv&quot;, sep = &#39;\t&#39;, head = TRUE)
 myG &lt;- read.delim(&quot;./input/genotype_complex.hmp.txt&quot;, head = FALSE)
 myG[,1]=c(&quot;rs&quot;,1:(nrow(myG)-1))</code></pre>
 <div id="farmcpu-for-complex-trait" class="section level4">
@@ -486,7 +504,7 @@ system.time(myGAPIT &lt;- GAPIT(
 </div>
 <div id="generated-values-for-a-complex-trait." class="section level1">
 <h1>Generated values for a complex trait.</h1>
-<pre class="r"><code>myY  &lt;- read.table(&quot;./input/phenotype_complex_generated.txt&quot;, sep = &#39;\t&#39;, head = TRUE)</code></pre>
+<pre class="r"><code>myY  &lt;- read.table(&quot;../Raw_data/phenotypes_complex_trait_gen.tsv&quot;, sep = &#39;\t&#39;, head = TRUE)</code></pre>
 <div id="farmcpu-for-complex-trait-generated" class="section level4">
 <h4>FarmCPU for complex trait generated</h4>
 <pre class="r"><code>setwd(&#39;./FarmCPU_complex_gen&#39;)

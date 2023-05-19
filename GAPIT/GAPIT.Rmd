@@ -9,6 +9,21 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 options(repos = c(CRAN = "http://cran.rstudio.com"))
 ```
+# First, install the working directory GWAS_project/GAPIT/
+
+## Generation of genotype files with a normal distribution.
+```{r}
+# Simple
+phenotypes_simple <- read.table('../Raw_data/phenotypes_simple_trait.tsv', header = TRUE, sep='\t')
+phenotypes_simple$Leu <- round(rnorm(249, mean=mean(phenotypes_simple$Leu, na.rm = T), sd=sd(phenotypes_simple$Leu, na.rm = T)), 1)
+write.table(phenotypes_simple, file='../Raw_data/phenotypes_simple_trait_gen.tsv', quote=FALSE, sep='\t', row.names=FALSE)
+
+# Complex
+phenotypes_complex <- read.table('../Raw_data/phenotypes_complex_trait.tsv', header = TRUE, sep='\t')
+phenotypes_complex$gen_pheno <- round(rnorm(97, mean=mean(phenotypes_complex$pheno, na.rm = T), sd=sd(phenotypes_complex$pheno, na.rm = T)), 1)
+phenotypes_complex <- subset(phenotypes_complex, select = -pheno)
+write.table(phenotypes_complex, file='../Raw_data/phenotypes_complex_trait_gen.tsv', quote=FALSE, sep='\t', row.names=FALSE)
+```
 Download GAPIT.
 ```{r}
 invisible(source("http://zzlab.net/GAPIT/GAPIT.library.R"))
@@ -16,7 +31,8 @@ invisible(source("http://zzlab.net/GAPIT/gapit_functions.txt"))
 ```
 Prepare the data in the variables for the simple trait. Here myY is the phenotype data, myG is the genotype data.
 ```{r}
-myY  <- read.table("./input/phenotype_simple.txt", sep = '\t', head = TRUE)
+phenotypes_simple <- read.table("../Raw_data/phenotypes_simple_trait.tsv", sep = '\t', head = TRUE)
+myY <- subset(phenotypes_simple, select = -FID)
 myG <- read.delim("./input/genotype_simple.hmp.txt", head = FALSE)
 myG[,1]=c("rs",1:(nrow(myG)-1))
 ```
@@ -54,9 +70,10 @@ system.time(myGAPIT <- GAPIT(
   SNP.FDR =0.05
 ))
 ```
-# Generated values for a simple trait.
+# Generated data for a simple trait.
 ```{r, results='hide'}
-myY  <- read.table("./input/phenotype_simple_generated.txt", sep = '\t', head = TRUE)
+phenotypes_simple_gen <- read.table("../Raw_data/phenotypes_simple_trait_gen.tsv", sep = '\t', head = TRUE)
+myY <- subset(phenotypes_simple_gen, select = -FID)
 ```
 #### FarmCPU for simple trait generated
 ```{r, results='hide'}
@@ -93,7 +110,7 @@ system.time(myGAPIT <- GAPIT(
 ```
 # Complex trait
 ```{r, results='hide'}
-myY  <- read.table("./input/phenotype_complex.tsv", sep = '\t', head = TRUE)
+myY  <- read.table("../Raw_data/phenotypes_complex_trait.tsv", sep = '\t', head = TRUE)
 myG <- read.delim("./input/genotype_complex.hmp.txt", head = FALSE)
 myG[,1]=c("rs",1:(nrow(myG)-1))
 ```
@@ -132,7 +149,7 @@ system.time(myGAPIT <- GAPIT(
 ```
 # Generated values for a complex trait.
 ```{r, results='hide'}
-myY  <- read.table("./input/phenotype_complex_generated.txt", sep = '\t', head = TRUE)
+myY  <- read.table("../Raw_data/phenotypes_complex_trait_gen.tsv", sep = '\t', head = TRUE)
 ```
 #### FarmCPU for complex trait generated
 ```{r, results='hide'}

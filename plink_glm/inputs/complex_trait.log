@@ -1,0 +1,31 @@
+PLINK v2.00a4 M1 (25 Mar 2023)
+Options in effect:
+  --allow-extra-chr
+  --make-bed
+  --max-alleles 2
+  --out ./inputs/complex_trait
+  --pheno ../Raw_data/phenotypes_complex_trait.tsv
+  --vcf ../Raw_data/genotypes_complex_trait.vcf
+
+Hostname: MacBook-Pro.local
+Working directory: /Users/iskys/GIT/GWAS_project/plink_glm
+Start time: Fri May 19 01:38:22 2023
+
+Random number seed: 1684449502
+16384 MiB RAM detected; reserving 8192 MiB for main workspace.
+Using up to 8 compute threads.
+--vcf: 31676 variants scanned.
+--vcf: ./inputs/complex_trait-temporary.pgen +
+./inputs/complex_trait-temporary.pvar.zst +
+./inputs/complex_trait-temporary.psam written.
+97 samples (0 females, 0 males, 97 ambiguous; 97 founders) loaded from
+./inputs/complex_trait-temporary.psam.
+31366 out of 31676 variants loaded from
+./inputs/complex_trait-temporary.pvar.zst.
+1 quantitative phenotype loaded (97 values).
+31366 variants remaining after main filters.
+Writing ./inputs/complex_trait.fam ... done.
+Writing ./inputs/complex_trait.bim ... done.
+Writing ./inputs/complex_trait.bed ... done.
+
+End time: Fri May 19 01:38:22 2023

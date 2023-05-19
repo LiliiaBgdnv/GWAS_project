@@ -1,0 +1,28 @@
+PLINK v2.00a4 M1 (25 Mar 2023)
+Options in effect:
+  --allow-extra-chr
+  --make-bed
+  --out ./input/simple_trait
+  --pheno ../Raw_data/phenotypes_simple_trait_2col.tsv
+  --vcf ./data_using_for_create_bim/soybean_rename_chr.vcf
+
+Hostname: MacBook-Pro.local
+Working directory: /Users/iskys/GIT/GWAS_project/GEMMA_BSLMM
+Start time: Fri May 19 02:53:16 2023
+
+Random number seed: 1684453996
+16384 MiB RAM detected; reserving 8192 MiB for main workspace.
+Using up to 8 compute threads.
+--vcf: 23278 variants scanned.
+--vcf: ./input/simple_trait-temporary.pgen +
+./input/simple_trait-temporary.pvar.zst + ./input/simple_trait-temporary.psam
+written.
+249 samples (0 females, 0 males, 249 ambiguous; 249 founders) loaded from
+./input/simple_trait-temporary.psam.
+23278 variants loaded from ./input/simple_trait-temporary.pvar.zst.
+1 quantitative phenotype loaded (242 values).
+Writing ./input/simple_trait.fam ... done.
+Writing ./input/simple_trait.bim ... done.
+Writing ./input/simple_trait.bed ... done.
+
+End time: Fri May 19 02:53:16 2023

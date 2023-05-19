@@ -1,1 +1,2 @@
-,SNP,Chr,Pos,P.value,MAF,nobs,H.B.P.Value,Effect
+,SNP,Chr,Pos,P.value,MAF,traits
+1074,1074,1,52651591,5.662325e-07,0.3969072,FarmCPU.gen_pheno

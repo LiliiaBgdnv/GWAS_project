@@ -1,0 +1,2 @@
+SNP,Chromosome,Position,P.value,maf,nobs,effect,Phenotype_Variance_Explained(%)
+1074,1,52651591,5.49385735235077e-07,0.396907216494845,97,-111.45571657253,50.3608375760345
