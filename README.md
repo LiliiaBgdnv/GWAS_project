@@ -344,7 +344,7 @@ pip install intervene
 ./intervene pairwise -i ./complex/*.bed
 ```
 
-These heatmaps show on the diagonal how many total SNPs were annotated from each model, and also indicate which ones are matched between models. 
+The heatmaps show the total number number of the SNPs, identified by each model (on the diagonal), as well the number of intersections between the models.
 
 <img width="615" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/ff5b4c62-0783-4c15-bb95-fe8faab181e6">
 
