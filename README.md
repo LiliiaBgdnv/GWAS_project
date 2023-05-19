@@ -350,9 +350,9 @@ These heatmaps show on the diagonal how many total SNPs were annotated from each
 
 
 ## CONCLUSIONS:
- 1. **FarmCPU**, implemented in the GAPIT program, performed best when working with the dataset for a **complex trait**. Thus, this method has found 20 adequately annotated SNPs, which is the highest number among tested models
- 2. For the **simple trait**, the **FarmCPU method** implemented in the PLINK program showed itself in the best way, it found the greatest number of adequately annotated SNPs, namely 7 pieces. But in general, few SNPs were found because amino acid content is not a very contrasting trait.
- 3. In the future it is planned to test these models with the selected parameters, to improve the quality of the analysis.
+1. **FarmCPU**, implemented in the GAPIT package, performed best for the **complex trait** dataset. It identified 8 SNPs with a relevant annotation and demonstrated the greatest statistical power and the highest degree of consistency with other models.
+2. For the **simple trait** dataset, **FarmCPU** method also performed best. It identified 8 SNPs, with the highest statistical power and the highest number of overlaps with other models. But in general, few SNPs were identified, because amino acid content is not a very contrasting trait.
+ To improve the quality of the analysis, we plan to further test the models with the fine-tuned parameters.
 
 ## Software Requirements
 
