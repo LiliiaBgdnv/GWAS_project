@@ -352,6 +352,7 @@ These heatmaps show on the diagonal how many total SNPs were annotated from each
 ## CONCLUSIONS:
 1. **FarmCPU**, implemented in the GAPIT package, performed best for the **complex trait** dataset. It identified 8 SNPs with a relevant annotation and demonstrated the greatest statistical power and the highest degree of consistency with other models.
 2. For the **simple trait** dataset, **FarmCPU** method also performed best. It identified 8 SNPs, with the highest statistical power and the highest number of overlaps with other models. But in general, few SNPs were identified, because amino acid content is not a very contrasting trait.
+
  To improve the quality of the analysis, we plan to further test the models with the fine-tuned parameters.
 
 ## Software Requirements
