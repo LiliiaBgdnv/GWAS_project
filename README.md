@@ -16,9 +16,9 @@ The identification of the genetic loci associated with agronomically important p
 
 In this work, we aim to analyze the existing approaches for GWAS analysis in plants, to test them on real data of plant genotypes and phenotypes, and to select the optimal approaches.
 
-The 6 methods are tested on **2 datasets for soybeans (Glycine max)**, on a simple and a complex trait. Simple traits develop as a result of a certain type of interaction between a single pair of allelic genes.Complex traits are the result of several non-allelic genes or their products rather than a single pair of allelic genes. A complex trait can be due to the joint unambiguous action of several genes or be the end result of a chain of biochemical transformations in which the products of many genes take part.
+The 6 methods are tested on **2 datasets for soybeans (Glycine max)**, on a simple and a complex trait. Simple traits develop as a result of some type of interaction between a limited number of genes, as we assume. Complex traits develop as a result of the interaction of a large number of genes involved in many pathways.
 
-**A simple trait is the content of the amino acid leucine in beans. The complex trait is a trade secret :)**
+**A simple trait is the content of the amino acid leucine in beans,the data for working with a simple sign was taken from the [article](https://www.frontiersin.org/articles/10.3389/fpls.2019.01445/full). The complex trait is a trade secret :)**
 
 Preparation of the data for the simple trait: we selected the leucine content for the work, so for further work it is necessary to select the column 'Leu' from the phenotype data for the simple trait.
 ```ruby
@@ -350,8 +350,8 @@ These heatmaps show on the diagonal how many total SNPs were annotated from each
 
 
 ## CONCLUSIONS:
- 1. **FarmCPU**, implemented in the GAPIT program, performed best when working with the dataset for a **complex trait**. Thus, this method has found 20 adequately annotated sigs, which is the highest number among tested models
- 2. For the **simple trait**, the **FarmCPU method** implemented in the PLINK program showed itself in the best way, it found the greatest number of adequately annotated sieps, namely 7 pieces. But in general, few SNPs were found because amino acid content is not a very contrasting trait.
+ 1. **FarmCPU**, implemented in the GAPIT program, performed best when working with the dataset for a **complex trait**. Thus, this method has found 20 adequately annotated SNPs, which is the highest number among tested models
+ 2. For the **simple trait**, the **FarmCPU method** implemented in the PLINK program showed itself in the best way, it found the greatest number of adequately annotated SNPs, namely 7 pieces. But in general, few SNPs were found because amino acid content is not a very contrasting trait.
  3. In the future it is planned to test these models with the selected parameters, to improve the quality of the analysis.
 
 ## Software Requirements
