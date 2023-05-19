@@ -20,7 +20,12 @@ The 6 methods will be tested on **2 datasets for soybeans (Glycine max)**, on a 
 
 **A simple trait is the content of the amino acid leucine in beans. The complex trait is a trade secret :)**
 
-????Also to check for false positives, files were generated for the models in which these phenotypes were represented as a normal distribution.
+Preparation of the data for the simple trait: we selected the leucine content for the work, so for further work it is necessary to select the column 'Leu' from the phenotype data for the simple trait.
+```ruby
+cut -f 1,2,10 ./Raw_data/phenotypes_simple_trait_full.tsv > ./Raw_data/phenotypes_simple_trait.tsv
+```
+
+Also to check for false positives, files were generated for the models in which these phenotypes were represented as a normal distribution. The script for the generation is presented in this [file](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GAPIT/GAPIT.Rmd).
 
 **We have analyzed the literature and selected six models for comparison:**
 
@@ -56,14 +61,9 @@ git clone https://github.com/LiliiaBgdnv/GWAS_project.git
 cd GWAS_project
 ```
 
-Preparation of the data for the simple trait: we selected the leucine content for the work, so for further work it is necessary to select the column 'Leu' from the phenotype data for the simple trait.
-```ruby
-cut -f 1,2,10 ./Raw_data/phenotypes_simple_trait_full.tsv > ./Raw_data/phenotypes_simple_trait.tsv
-```
-
 ### [GAPIT (Version 3)](https://zzlab.net/GAPIT/) (FarmCPU, MLM, Blink)
-All data for the methods are in the "[GAPIT](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GAPIT)" folder, and there is also an [**.rmd** file](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GAPIT/GAPIT.Rmd) with all the work of the three models.
-
+All data for the methods are in the "[GAPIT](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GAPIT)" folder, and there is also an [**.rmd** file](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GAPIT/GAPIT.Rmd) with all the work of the three models. Here we also use files with the extension ".hmp.txt". Conversion of genotype data from vcf format to hapmap was performed in the [TASSEL 5](https://tassel.bitbucket.io/) program. 
+ 
 ### PLINK2 glm
 **All data is presented in the appropriate [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/plink_glm)**
 
@@ -74,29 +74,33 @@ Here **.bed, .bim, .fam** files are made using the program [plink2](https://www.
 ```ruby
 cd plink_glm
 ```
+In this section the phenotype will be needed with two columns, so you need to prepare phenotype files for the simple trait.
 
+**(command line):**
 ```ruby
-../plink2 --vcf ../Raw_data/genotypes_complex_trait.vcf -pheno ./inputs/phenotypes_complex.tsv --make-bed --allow-extra-chr --out ./inputs/complex_trait
-../plink2 --vcf ../Raw_data/genotypes_simple_trait.vcf -pheno ./inputs/phenotypes_simple.tsv --make-bed --allow-extra-chr --out ./inputs/simple_trait
-../plink2 --vcf ../Raw_data/genotypes_complex_trait.vcf -pheno ./inputs/gen_complex_phenotypes.tsv --make-bed --allow-extra-chr --out ./inputs/complex_trait
-../plink2 --vcf ../Raw_data/genotypes_simple_trait.vcf -pheno ./inputs/gen_simple_phenotypes.tsv --make-bed --allow-extra-chr --out ./inputs/simple_trait
+cut -f2- ../Raw_data/phenotypes_simple_trait.tsv > ../Raw_data/phenotypes_simple_trait_2col.tsv
+cut -f2- ../Raw_data/phenotypes_simple_trait_gen.tsv > ../Raw_data/phenotypes_simple_trait_2col_gen.tsv
+../plink2 --vcf ../Raw_data/genotypes_complex_trait.vcf -pheno ../Raw_data/phenotypes_complex_trait.tsv --make-bed --allow-extra-chr --max-alleles 2 --out ./inputs/complex_trait
+../plink2 2 --vcf ../Raw_data/genotypes_simple_trait.vcf -pheno ../Raw_data/phenotypes_simple_trait_2col.tsv --make-bed --allow-extra-chr --out ./inputs/simple_trait
+../plink2 --vcf ../Raw_data/genotypes_complex_trait.vcf -pheno ../Raw_data/phenotypes_complex_trait_gen.tsv --make-bed --allow-extra-chr --max-alleles 2 --out ./inputs/complex_trait_gen
+../plink2 --vcf ../Raw_data/genotypes_simple_trait.vcf -pheno ../Raw_data/phenotypes_simple_trait_gen_2col_gen.tsv --make-bed --allow-extra-chr --out ./inputs/simple_trait_gen
 ```
 
 **For simple trait (command line):**
 ```ruby
-../plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/simple_trait.bed --bim ./inputs/simple_trait.bim --fam ./inputs/simple_trait.fam --pheno ./inputs/phenotype_simple.txt --adjust cols='chrom','pos','alt','a1','ref','gc','fdrbh' --out ./results/simple_glm_result_chr --covar-variance-standardize --freq --threads 32 --memory 100000
+../plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/simple_trait.bed --bim ./inputs/simple_trait.bim --fam ./inputs/simple_trait.fam --pheno ../Raw_data/phenotypes_simple_trait_2col.tsv --adjust cols='chrom','pos','alt','a1','ref','gc','fdrbh' --out ./results/simple_glm_result_chr --covar-variance-standardize --freq --threads 32 --memory 100000
 awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_result_chr.Leu.glm.linear.adjusted  > ./results/simple_glm_result_chr.Leu.glm.linear.adjusted
 awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_result_chr.Leu.glm.linear > plink_glm/results/simple_glm_result_chr.Leu.glm.linear
 ```
 
 **For complex trait (command line):**
 ```ruby
-../plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/complex_trait.bed --bim ./inputs/complex_trait.bim --fam ./inputs/complex_trait.fam --pheno ./inputs/phenotypes_complex.tsv --adjust --out ./results/complex_glm_result --covar-variance-standardize --freq --threads 32 --memory 100000
+../plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/complex_trait.bed --bim ./inputs/complex_trait.bim --fam ./inputs/complex_trait.fam --pheno ../Raw_data/phenotypes_complex_trait.tsv --adjust --out ./results/complex_glm_result --covar-variance-standardize --freq --threads 32 --memory 100000
 ```
 
 **For simple trait generated data (command line):**
 ```ruby
-../plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/simple_trait.bed --bim ./inputs/simple_trait.bim --fam ./inputs/simple_trait.fam --pheno ./inputs/gen_phenotype_simple.txt --adjust cols='chrom','pos','alt','a1','ref','gc','fdrbh' --out ./results/simple_glm_gen_result_chr --covar-variance-standardize --freq --threads 32 --memory 100000
+../plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/simple_trait.bed --bim ./inputs/simple_trait.bim --fam ./inputs/simple_trait.fam --pheno ../Raw_data/phenotypes_simple_trait_gen_2col_gen.tsv --adjust cols='chrom','pos','alt','a1','ref','gc','fdrbh' --out ./results/simple_glm_gen_result_chr --covar-variance-standardize --freq --threads 32 --memory 100000
 awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_gen_result_chr.Leu.glm.linear.adjusted  > ./results/simple_glm_gen_result_chr.Leu.glm.linear.adjusted
 awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_gen_result_chr.Leu.glm.linear > ./results/simple_glm_gen_result_chr.Leu.glm.linear
 ```
@@ -104,10 +108,12 @@ awk '{gsub(/^GLYMAchr_/,""); print}' ./results/simple_glm_gen_result_chr.Leu.glm
 **For complex trait generated data (command line):**
 
 ```ruby
-plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/complex_trait.bed --bim ./inputs/complex_trait.bim --fam ./inputs/complex_trait.fam --pheno ./inputs/gen_phenotypes_complex.tsv --adjust --out ./results/complex_glm_gen_result --covar-variance-standardize --freq --threads 32 --memory 100000
+plink2 --glm allow-no-covars --allow-extra-chr --bed ./inputs/complex_trait.bed --bim ./inputs/complex_trait.bim --fam ./inputs/complex_trait.fam --pheno ../Raw_data/phenotypes_complex_trait_gen.tsv --adjust --out ./results/complex_glm_gen_result --covar-variance-standardize --freq --threads 32 --memory 100000
 ```
 
 ### [GEMMA  v0.98.6](https://github.com/genetics-statistics/GEMMA)
+
+For this model, we prepared other genotype and phenotype files, changing the names so that they contain only numbers, the retrained files are in the [folder](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GEMMA_BSLMM/data_using_for_create_bim).
 
 Installation:
 ```ruby
@@ -116,7 +122,14 @@ wget https://github.com/genetics-statistics/GEMMA/releases/download/v0.98.5/gemm
 
 #### BSLMM
 ```ruby
-cd GEMMA_BSLMM
+cd ../GEMMA_BSLMM
+```
+**(command line):**
+```ruby
+../plink2 --vcf ./data_using_for_create_bim/genotypes_complex_3_1_3.vcf -pheno ./data_using_for_create_bim/phenotypes_soy_complex_3_1_3.tsv --make-bed --allow-extra-chr --max-alleles 2 --out ./input/complex_trait
+../plink2 --vcf ./data_using_for_create_bim/soybean_rename_chr.vcf -pheno ../Raw_data/phenotypes_simple_trait_2col.tsv --make-bed --allow-extra-chr --out ./input/simple_trait
+../plink2 --vcf ./data_using_for_create_bim/genotypes_complex_3_1_3.vcf -pheno ./data_using_for_create_bim/phenotypes_soy_complex_gen.tsv --make-bed --allow-extra-chr --max-alleles 2 --out ./input/complex_trait_gen
+../plink2 --vcf ./data_using_for_create_bim/soybean_rename_chr.vcf -pheno ../Raw_data/phenotypes_simple_trait_2col_gen.tsv --make-bed --allow-extra-chr --out ./input/simple_trait_gen
 ```
 
 **For simple trait (command line):**
@@ -236,7 +249,7 @@ As you can see, with a threshold of **0.05 only 1 SNPs were found for the comple
 ## Annotation of found SNPs
 The SNPs found by the program were annotated in the following steps:
 1) Selection of found SNPs with p-value < 0.05 for the complex trait or p-value < 0.1 for the simple trait (for the BSLMM model PIP > 0.02). 
-2) For each SNP, its chromosome number, its coordinate - 500bp and its coordinate + 500bp are taken and written into a .bed file. This and the previous step are done in [Jupiter notebook](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/Benjamini_Yekutieli.ipynb).
+2) For each SNP, its chromosome number, its coordinate - 500bp and its coordinate + 500bp are taken and written into a .bed file. We investigate exactly the gaps around the SNPs found, because the model can predict not only SNPs in the protein-coding gene, but also the associated genes if the SNPs found are in the decoding gene. This and the previous step are done in [Jupiter notebook](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/Benjamini_Yekutieli.ipynb).
 3) Download the annotation of Glycine max:
 ```ruby
 cd GWAS_project/for_annotation
@@ -300,9 +313,19 @@ grep "CDS:" output/glm_simple_output.txt | awk -F'CDS:|;' '{print $2}' > output/
 
 10) For the last stage of the annotation, you need to see which protein is encoded under that ID at that [site](http://go.pantherdb.org) choosing the Glycine max organism.
 
+On this [site](http://go.pantherdb.org/tools/gxIdsList.do?list=upload_1&organism=Glycine%20max) we visualize biological processes in which found proteins are used. In 1 point, the names from the abstract are given, and the next two points are indicated by the picture.
+<img width="637" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/09873b74-c99f-4fce-9786-61f7eab3abec">
+
+## Simple trait:
+<img width="1174" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/9a1b974d-d403-4c42-8687-762dfb3445c6">
+
+## Complex trait
+<img width="1382" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/122a704e-9bc6-439f-b7fe-e2e06dd4cea8">
+
+
 ### Number of intersections of the significant SNPs identified by the tools.
 
-For visualization, we built a heatmap. Preparation of **.bed, .bim, .fam** fills is done as in the *annotation part*, but with the difference that in the 2nd point they take coordinates with +- 1000bp
+For visualization, we built a heatmap. Preparation of **.bed, .bim, .fam** fills is done as in the *annotation part*, but with the difference that in the 2nd point they take coordinates with +- 1000bp.
 
 ```ruby
 cd GWAS_ptoject/heatmap
@@ -325,9 +348,10 @@ These heatmaps show on the diagonal how many total SNPs were annotated from each
 
 <img width="615" alt="image" src="https://github.com/LiliiaBgdnv/GWAS_project/assets/109213422/ff5b4c62-0783-4c15-bb95-fe8faab181e6">
 
+
 ## CONCLUSIONS:
- 1. **SUPER**, implemented in the GAPIT program, performed best when working with the dataset for a **complex trait**. Thus, this method has found 20 adequately annotated sigs, which is the highest number among tested models
- 2. For the **simple trait**, the **GLM method** implemented in the PLINK program showed itself in the best way, it found the greatest number of adequately annotated sieps, namely 7 pieces.
+ 1. **FarmCPU**, implemented in the GAPIT program, performed best when working with the dataset for a **complex trait**. Thus, this method has found 20 adequately annotated sigs, which is the highest number among tested models
+ 2. For the **simple trait**, the **FarmCPU method** implemented in the PLINK program showed itself in the best way, it found the greatest number of adequately annotated sieps, namely 7 pieces. But in general, few SNPs were found because amino acid content is not a very contrasting trait.
  3. In the future it is planned to test these models with the selected parameters, to improve the quality of the analysis.
 
 ## Software Requirements
