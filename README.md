@@ -16,7 +16,7 @@ The identification of the genetic loci associated with agronomically important p
 
 In this work, we aim to analyze the existing approaches for GWAS analysis in plants, to test them on real data of plant genotypes and phenotypes, and to select the optimal approaches.
 
-The 6 methods will be tested on **2 datasets for soybeans (Glycine max)**, on a simple and a complex trait. Simple traits develop as a result of a certain type of interaction between a single pair of allelic genes.Complex traits are the result of several non-allelic genes or their products rather than a single pair of allelic genes. A complex trait can be due to the joint unambiguous action of several genes or be the end result of a chain of biochemical transformations in which the products of many genes take part.
+The 6 methods are tested on **2 datasets for soybeans (Glycine max)**, on a simple and a complex trait. Simple traits develop as a result of a certain type of interaction between a single pair of allelic genes.Complex traits are the result of several non-allelic genes or their products rather than a single pair of allelic genes. A complex trait can be due to the joint unambiguous action of several genes or be the end result of a chain of biochemical transformations in which the products of many genes take part.
 
 **A simple trait is the content of the amino acid leucine in beans. The complex trait is a trade secret :)**
 
