@@ -255,7 +255,7 @@ The SNPs found by the program were annotated in the following steps:
 cd GWAS_project/for_annotation
 wget https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-56/gff3/glycine_max/Glycine_max.Glycine_max_v2.1.56.chr.gff3.gz
 gzip -d Glycine_max.Glycine_max_v2.1.56.chr.gff3.gz
-``
+```
 4) Intersecting our .bed files and annotation using [bedtools v2.31.0](https://bedtools.readthedocs.io/en/latest/index.html):
 Optional:
 ```ruby
