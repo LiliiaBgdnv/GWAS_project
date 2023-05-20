@@ -118,6 +118,10 @@ For this model, we prepared other genotype and phenotype files, changing the chr
 Installation:
 ```ruby
 wget https://github.com/genetics-statistics/GEMMA/releases/download/v0.98.5/gemma-0.98.5-linux-static-AMD64.gz
+gunzip gemma-0.98.5-linux-static-AMD64.gz
+mv gemma-0.98.5-linux-static-AMD64 gemma
+chmod 777 gemma
+
 ```
 
 #### BSLMM
