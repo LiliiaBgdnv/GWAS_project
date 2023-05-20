@@ -158,9 +158,10 @@ cd ../GEMMA_BSLMM
 
 #### MVLMM
 ```ruby
-cd GEMMA_MVLMM
+cd ../GEMMA_MVLMM
 ```
 Here we used [plink1.9](https://www.cog-genomics.org/plink/) to generate .bed files. Install it from the website.
+
 ```ruby
 sed 's/KZ//g' genotypes_complex_trait.vcf > genotypes_complex_trait_processed.vcf
 ```
@@ -256,7 +257,7 @@ The SNPs found by the program were annotated in the following steps:
 2) For each SNP, its chromosome number, its coordinate - 500bp and its coordinate + 500bp are taken and written into a .bed file. We investigate exactly the gaps around the SNPs found, because the model can predict not only SNPs in the protein-coding gene, but also the associated genes if the SNPs found are in the decoding gene. This and the previous step are done in [Jupiter notebook](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/Benjamini_Yekutieli.ipynb).
 3) Download the annotation of Glycine max:
 ```ruby
-cd GWAS_project/for_annotation
+cd ../for_annotation
 wget https://ftp.ensemblgenomes.ebi.ac.uk/pub/plants/release-56/gff3/glycine_max/Glycine_max.Glycine_max_v2.1.56.chr.gff3.gz
 gzip -d Glycine_max.Glycine_max_v2.1.56.chr.gff3.gz
 ```
