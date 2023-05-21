@@ -52,14 +52,20 @@ Also to check for false positives, files were generated for the models in which 
 7.  Xiang Zhou, Peter Carbonetto and Matthew Stephens (2013). Polygenic modeling with bayesian sparse linear mixed models. PLoS Genetics 9, e1003264.
 8.  Xiang Zhou and Matthew Stephens (2014). Efficient multivariate linear mixed model algorithms for genome-wide association studies. Nature Methods 11, 407–409.
 
-## Running the tools
+## Getting Started
 
-To get the data and code, clone the git repository:
-
+1. Fork the repository.
+2. If you have a personal token that allows you to work with private repositories through the command line, fine, if not, then generate it `Settings -> Developer settings -> Personal access tokens -> Generate new token
+3. 
 ```ruby
-git clone https://github.com/LiliiaBgdnv/GWAS_project.git
+git clone https://<PERSONAL-ACCESS Token>/<user_name>/GWAS_project.git
+```
+4.
+```ruby
 cd GWAS_project
 ```
+
+## Running the tools
 
 ### [GAPIT (Version 3)](https://zzlab.net/GAPIT/) (FarmCPU, MLM, Blink)
 All the data for the methods is in the "[GAPIT](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GAPIT)" folder, and there is also an [**.rmd** file](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GAPIT/GAPIT.Rmd) with all the work of the three models. Here we also use files with the extension ".hmp.txt". Conversion of genotype data from vcf format to hapmap was performed in the [TASSEL 5](https://tassel.bitbucket.io/) program. 
