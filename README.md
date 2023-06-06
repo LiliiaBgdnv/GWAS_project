@@ -388,7 +388,7 @@ The heatmaps show the total number number of the SNPs, identified by each model 
 | graphics         |                       |
 | grDevices         |                       |
 
-
+## References
 
 1.  Brachi B. Genome-wide association studies in plants: the missing heritability is in the field / B. Brachi, G.P. Morris, J.O. Borevitz // Genome Biology. – 2011. – Vol. 12. – Genome-wide association studies in plants. – № 10. – P. 232.
 2.  Prioritized candidate causal haplotype blocks in plant genome-wide association studies / X. Wu [et al.] // PLOS Genetics. – 2022. – Vol. 18. – № 10. – P. e1010437.
