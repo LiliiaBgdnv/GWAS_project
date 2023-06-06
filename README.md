@@ -186,8 +186,8 @@ Press `submit`.
 
 6) Download the resulting file `Download Full Mapping Report`
 7) In the resulting file, leave the columns **source_id, mapped_start, mapped_stop**, delete their name and the name of the table (if you have one).
-8) Intersecting SNPs for the simple trait, for the complex trait and Extracting protein IDs from the resulting files:
-Run the script [ntersect_snps.sh](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/for_annotation)
+8) Intersecting SNPs for the simple and complex traits and Extracting protein IDs from the resulting files:
+Run the script [intersect_snps.sh](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/for_annotation)
 As a result, you obtain files with protein IDs named protein_<model_name>_<simpleorcomplex>.txt. For the last stage of the annotation, you need to see which protein is encoded under that ID at that site choosing the Glycine max organism.
 
 10) For the last stage of the annotation, you need to see which protein is encoded under that ID at that [site](http://go.pantherdb.org) choosing the Glycine max organism.
