@@ -168,15 +168,9 @@ apt-get install bedtools
 brew tap homebrew/science
 brew install bedtools
 ```
-The intersecting complex trait
-```ruby
-bedtools intersect -wao -nonamecheck -a blink_complex.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/blink_complex_output.txt
-bedtools intersect -wao -nonamecheck -a farmcpu_complex.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/farmcpu_complex_output.txt
-bedtools intersect -wao -nonamecheck -a super_complex.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/super_complex_output.txt
-bedtools intersect -wao -nonamecheck -a glm_complex.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/glm_complex_output.txt
-bedtools intersect -wao -nonamecheck -a bslmm_complex.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/bslmm_complex_output.txt
-```
-The intersection of a simple feature is somewhat more complicated:
+
+The intersection of a simple feature is somewhat more complicated. Prior to the intersection of the intervals for the simple trait, you need to convert the coordinates between genomic assemblies:
+
 5) Upload the file to the [site](https://www.ncbi.nlm.nih.gov/genome/tools/remap#tab=asm&src_org=Glycine%20max&src_asm=GCF_000004515.3&tgt_asm=GCF_000004515.6&min_ratio=0.5&max_ratio=2.0&allow_locations=true&merge_fragments=false&in_fmt=guess&out_fmt=guess&genome_workbench=true) with the parameters 
 > Source Organism : Glycine max 
 > 
@@ -192,26 +186,9 @@ Press `submit`.
 
 6) Download the resulting file `Download Full Mapping Report`
 7) In the resulting file, leave the columns **source_id, mapped_start, mapped_stop**, delete their name and the name of the table (if you have one).
-8) The intersecting simple trait
-```ruby
-bedtools intersect -wao -nonamecheck -a r_blink_simple.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/blink_simple_output.txt
-bedtools intersect -wao -nonamecheck -a r_farmcpu_simple.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/farmcpu_simple_output.txt
-bedtools intersect -wao -nonamecheck -a r_bslmm_simple.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/bslmm_simple_output.txt
-bedtools intersect -wao -nonamecheck -a r_glm_simple.bed -b Glycine_max.Glycine_max_v2.1.56.chr.gff3 > output/glm_simple_output.txt
-```
-
-9) Extract protein IDs from these files:
-```ruby
-grep "CDS:" output/blink_complex_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_blink_complex.txt
-grep "CDS:" output/farmcpu_complex_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_farmcpu_complex.txt     
-grep "CDS:" output/super_complex_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_super_complex.txt
-grep "CDS:" output/glm_complex_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_glm_complex.txt
-grep "CDS:" output/bslmm_complex_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_bslmm_complex.txt
-grep "CDS:" output/blink_simple_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_blink_simple.txt     
-grep "CDS:" output/farmcpu_simple_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_farmcpu_simple.txt
-grep "CDS:" output/bslmm_simple_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_bslmm_simple.txt
-grep "CDS:" output/glm_simple_output.txt | awk -F'CDS:|;' '{print $2}' > output/protein/protein_glm_simple.txt
-```
+8) Intersecting SNPs for the simple trait, for the complex trait and Extracting protein IDs from the resulting files:
+Run the script [ntersect_snps.sh](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/for_annotation)
+As a result, you obtain files with protein IDs named protein_<model_name>_<simpleorcomplex>.txt. For the last stage of the annotation, you need to see which protein is encoded under that ID at that site choosing the Glycine max organism.
 
 10) For the last stage of the annotation, you need to see which protein is encoded under that ID at that [site](http://go.pantherdb.org) choosing the Glycine max organism.
 
