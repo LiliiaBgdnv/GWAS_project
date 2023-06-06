@@ -365,6 +365,29 @@ The heatmaps show the total number number of the SNPs, identified by each model 
 * <img src=https://github.com/simple-icons/simple-icons/blob/develop/icons/macos.svg height = 20> Ventura 13.2.1
 * <img src=https://github.com/simple-icons/simple-icons/blob/develop/icons/gnubash.svg height=20> Bash
 * <img src=https://github.com/simple-icons/simple-icons/blob/develop/icons/r.svg height=20> R 4.2.3
+| R using packages | Python using packages |
+|------------------|-----------------------|
+| .GlobalEnv       | statsmodels           |
+| lme4             | pandas                |
+| scatterplot3d    | matplotlib            |
+| EMMREML          | qmplot                |
+| Matrix           | scipy                 |
+| bigmemory        | numpy                 |
+| grid             | typing                |
+| compiler         |                       |
+| ape              |                       |
+| genetics         |                       |
+| mvtnorm          |                       |
+| MASS             |                       |
+| gtools           |                       |
+| gdata            |                       |
+| combinat         |                       |
+| gplots           |                       |
+| tools:rstudio    |                       |
+| stats            |                       |
+| graphics         |                       |
+| grDevices         |                       |
+
 
 
 1.  Brachi B. Genome-wide association studies in plants: the missing heritability is in the field / B. Brachi, G.P. Morris, J.O. Borevitz // Genome Biology. – 2011. – Vol. 12. – Genome-wide association studies in plants. – № 10. – P. 232.
