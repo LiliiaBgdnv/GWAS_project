@@ -92,81 +92,14 @@ chmod 777 gemma
 ```ruby
 cd ../GEMMA_BSLMM
 ```
-**(command line):**
-```ruby
-../plink2 --vcf ./data_using_for_create_bim/genotypes_complex_3_1_3.vcf -pheno ./data_using_for_create_bim/phenotypes_soy_complex_3_1_3.tsv --make-bed --allow-extra-chr --max-alleles 2 --out ./input/complex_trait
-../plink2 --vcf ./data_using_for_create_bim/soybean_rename_chr.vcf -pheno ../Raw_data/phenotypes_simple_trait_2col.tsv --make-bed --allow-extra-chr --out ./input/simple_trait
-../plink2 --vcf ./data_using_for_create_bim/genotypes_complex_3_1_3.vcf -pheno ./data_using_for_create_bim/phenotypes_soy_complex_gen.tsv --make-bed --allow-extra-chr --max-alleles 2 --out ./input/complex_trait_gen
-../plink2 --vcf ./data_using_for_create_bim/soybean_rename_chr.vcf -pheno ../Raw_data/phenotypes_simple_trait_2col_gen.tsv --make-bed --allow-extra-chr --out ./input/simple_trait_gen
-```
-
-**For simple trait (command line):**
-```ruby
-../gemma -bfile input/simple_trait -bslmm 1 -o gemma_bslmm_output_simple
-```
-
-**For complex trait (command line):**
-```ruby
-../gemma -bfile input/complex_trait -bslmm 1 -o gemma_bslmm_output_complex
-```
-
-**For simple trait generated data (command line):**
-```ruby
-../gemma -bfile input/simple_generated -bslmm 1 -o gemma_bslmm_output_simple_gen
-```
-
-**For complex trait generated data (command line):**
-```ruby
-../gemma -bfile input/complex_generated -bslmm 1 -o gemma_bslmm_output_complex_gen
-```
+To preprocess the data and run BSLMM, run [run_gemma_bslmm.sh](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GEMMA_BSLMM/run_gemma_bslmm.sh) script
 
 #### MVLMM
 ```ruby
 cd ../GEMMA_MVLMM
 ```
 Here we used [plink1.9](https://www.cog-genomics.org/plink/) to generate .bed files. Install it from the website.
-
-```ruby
-sed 's/KZ//g' genotypes_complex_trait.vcf > genotypes_complex_trait_processed.vcf
-```
-```ruby
-./plink1.9 --vcf ../Raw_data/genotypes_complex_trait_processed.vcf -pheno ../Raw_data/soy2_phenotypes_fast.txt --make-bed --allow-extra-chr --out ./input/soy2
-./plink1.9 --vcf ../Raw_data/genotypes_simple_trait.vcf -pheno ../Raw_data/soybean_simple_genotypes_phen_recode1.9.txt --make-bed --allow-extra-chr --out ./input/soybean_simple_genotypes_phen_recode1.9
-./plink1.9 --vcf ../Raw_data/genotypes_complex_trait_processed.vcf -pheno ../Raw_data/soy2_gen_phenotypes_fast.txt --make-bed --allow-extra-chr --out ./input/soy2gen
-./plink1.9 --vcf ../Raw_data/genotypes_simple_trait.vcf -pheno ../Raw_data/gen_soy_phenotypes_leu.tsv --make-bed --allow-extra-chr --out ./input/soybean_generated
-```
-
-**For simple trait (command line):**
-```ruby
-# generating the kinship matrix
-../gemma -bfile ./input/soybean_simple_genotypes_phen_recode1.9 -gk 1 -o kinship_soybean_matrix_center
-# running mvlmm
-../gemma -bfile ./input/soybean_simple_genotypes_phen_recode1.9 -k ./output/kinship_soybean_matrix_center.cXX.txt -lmm 4 -n 1 -o simple_soy_mvlmm
-```
-
-**For complex trait (command line):**
-```ruby
-# generating the kinship matrix
-../gemma -bfile ./input/soy2 -gk 1 -o kinship_soy2_matrix_center
-# running mvlmm
-../gemma -bfile ./input/soy2 -k ./output/kinship_soy2_matrix_center.cXX.txt -lmm 4 -n 1 -o complex_soy2_mvlmm
-```
-
-**For simple trait generated data (command line):**
-```ruby
-# generating the kinship matrix
-../gemma -bfile ./input/soy2gen -gk 1 -o kinship_soybean_matrix_center
-# running mvlmm
-../gemma -bfile ./input/soy2gen -k ./output/kinship_soybean_matrix_center.cXX.txt -lmm 4 -n 1 -o simple_soy_gen_mvlmm
-```
-
-**For complex trait generated data (command line):**
-```ruby
-# generating the kinship matrix
-../gemma -bfile ./input/soybean_generated -gk 1 -o kinship_soy2_matrix_center 
-# running mvlmm
-../gemma -bfile ./input/soybean_generated -k ./output/kinship_soy2_matrix_center.cXX.txt -lmm 4 -n 1 -o complex_soy2_gen_mvlmm.assoc
-```
+To preprocess the data and run BSLMM, run [run_gemma_mvlmm.sh](https://github.com/MaryM12/GWAS_project/blob/main/GEMMA_MVLMM/run_gemma_mvlmm.sh) script
 
 
 ## Analysis
