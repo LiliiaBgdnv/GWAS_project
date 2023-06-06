@@ -1,0 +1,62 @@
+18	57789144	57790143	18	ena	five_prime_UTR	57789188	57789379	.	+	.	Parent=transcript:KRH01816	192
+18	57789144	57790143	18	ena	exon	57789188	57789578	.	+	.	Parent=transcript:KRH01816;Name=KRH01816-1;constitutive=0;ensembl_end_phase=1;ensembl_phase=0;exon_id=KRH01816-1;rank=1	391
+18	57789144	57790143	18	ena	CDS	57789380	57789578	.	+	0	ID=CDS:KRH01816;Parent=transcript:KRH01816;protein_id=KRH01816	199
+18	57789144	57790143	18	ena	exon	57789663	57789763	.	+	.	Parent=transcript:KRH01816;Name=KRH01817-2;constitutive=1;ensembl_end_phase=0;ensembl_phase=1;exon_id=KRH01817-2;rank=2	101
+18	57789144	57790143	18	ena	CDS	57789663	57789763	.	+	2	ID=CDS:KRH01816;Parent=transcript:KRH01816;protein_id=KRH01816	101
+18	57789144	57790143	18	ena	exon	57789971	57790095	.	+	.	Parent=transcript:KRH01816;Name=KRH01817-3;constitutive=1;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH01817-3;rank=3	125
+18	57789144	57790143	18	ena	CDS	57789971	57790095	.	+	0	ID=CDS:KRH01816;Parent=transcript:KRH01816;protein_id=KRH01816	125
+18	57789144	57790143	18	ena	five_prime_UTR	57789195	57789379	.	+	.	Parent=transcript:KRH01817	185
+18	57789144	57790143	18	ena	exon	57789195	57789578	.	+	.	Parent=transcript:KRH01817;Name=KRH01817-1;constitutive=0;ensembl_end_phase=1;ensembl_phase=0;exon_id=KRH01817-1;rank=1	384
+18	57789144	57790143	18	ena	CDS	57789380	57789578	.	+	0	ID=CDS:KRH01817;Parent=transcript:KRH01817;protein_id=KRH01817	199
+18	57789144	57790143	18	ena	exon	57789663	57789763	.	+	.	Parent=transcript:KRH01817;Name=KRH01817-2;constitutive=1;ensembl_end_phase=0;ensembl_phase=1;exon_id=KRH01817-2;rank=2	101
+18	57789144	57790143	18	ena	CDS	57789663	57789763	.	+	2	ID=CDS:KRH01817;Parent=transcript:KRH01817;protein_id=KRH01817	101
+18	57789144	57790143	18	ena	exon	57789971	57790095	.	+	.	Parent=transcript:KRH01817;Name=KRH01817-3;constitutive=1;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH01817-3;rank=3	125
+18	57789144	57790143	18	ena	CDS	57789971	57790095	.	+	0	ID=CDS:KRH01817;Parent=transcript:KRH01817;protein_id=KRH01817	125
+18	57789144	57790143	18	ena	gene	57789188	57820853	.	+	.	ID=gene:GLYMA_18G300200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_18G300200;logic_name=ena	956
+18	57789144	57790143	18	ena	mRNA	57789188	57820853	.	+	.	ID=transcript:KRH01816;Parent=gene:GLYMA_18G300200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH01816	956
+18	57789144	57790143	18	ena	mRNA	57789195	57820853	.	+	.	ID=transcript:KRH01817;Parent=gene:GLYMA_18G300200;biotype=protein_coding;transcript_id=KRH01817	949
+18	57789144	57790143	18	Glycine_max_v2.1	chromosome	1	58018742	.	.	.	ID=chromosome:18;Alias=CM000851.3,chr18,CM000851.2,NC_016105.2	999
+18	57789812	57790811	18	ena	exon	57789971	57790095	.	+	.	Parent=transcript:KRH01816;Name=KRH01817-3;constitutive=1;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH01817-3;rank=3	125
+18	57789812	57790811	18	ena	CDS	57789971	57790095	.	+	0	ID=CDS:KRH01816;Parent=transcript:KRH01816;protein_id=KRH01816	125
+18	57789812	57790811	18	ena	exon	57790176	57790269	.	+	.	Parent=transcript:KRH01816;Name=KRH01817-4;constitutive=1;ensembl_end_phase=0;ensembl_phase=2;exon_id=KRH01817-4;rank=4	94
+18	57789812	57790811	18	ena	CDS	57790176	57790269	.	+	1	ID=CDS:KRH01816;Parent=transcript:KRH01816;protein_id=KRH01816	94
+18	57789812	57790811	18	ena	exon	57790430	57790540	.	+	.	Parent=transcript:KRH01816;Name=KRH01817-5;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH01817-5;rank=5	111
+18	57789812	57790811	18	ena	CDS	57790430	57790540	.	+	0	ID=CDS:KRH01816;Parent=transcript:KRH01816;protein_id=KRH01816	111
+18	57789812	57790811	18	ena	exon	57790620	57790736	.	+	.	Parent=transcript:KRH01816;Name=KRH01817-6;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH01817-6;rank=6	117
+18	57789812	57790811	18	ena	CDS	57790620	57790736	.	+	0	ID=CDS:KRH01816;Parent=transcript:KRH01816;protein_id=KRH01816	117
+18	57789812	57790811	18	ena	exon	57789971	57790095	.	+	.	Parent=transcript:KRH01817;Name=KRH01817-3;constitutive=1;ensembl_end_phase=2;ensembl_phase=0;exon_id=KRH01817-3;rank=3	125
+18	57789812	57790811	18	ena	CDS	57789971	57790095	.	+	0	ID=CDS:KRH01817;Parent=transcript:KRH01817;protein_id=KRH01817	125
+18	57789812	57790811	18	ena	exon	57790176	57790269	.	+	.	Parent=transcript:KRH01817;Name=KRH01817-4;constitutive=1;ensembl_end_phase=0;ensembl_phase=2;exon_id=KRH01817-4;rank=4	94
+18	57789812	57790811	18	ena	CDS	57790176	57790269	.	+	1	ID=CDS:KRH01817;Parent=transcript:KRH01817;protein_id=KRH01817	94
+18	57789812	57790811	18	ena	exon	57790430	57790540	.	+	.	Parent=transcript:KRH01817;Name=KRH01817-5;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH01817-5;rank=5	111
+18	57789812	57790811	18	ena	CDS	57790430	57790540	.	+	0	ID=CDS:KRH01817;Parent=transcript:KRH01817;protein_id=KRH01817	111
+18	57789812	57790811	18	ena	exon	57790620	57790736	.	+	.	Parent=transcript:KRH01817;Name=KRH01817-6;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=KRH01817-6;rank=6	117
+18	57789812	57790811	18	ena	CDS	57790620	57790736	.	+	0	ID=CDS:KRH01817;Parent=transcript:KRH01817;protein_id=KRH01817	117
+18	57789812	57790811	18	ena	gene	57789188	57820853	.	+	.	ID=gene:GLYMA_18G300200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_18G300200;logic_name=ena	999
+18	57789812	57790811	18	ena	mRNA	57789188	57820853	.	+	.	ID=transcript:KRH01816;Parent=gene:GLYMA_18G300200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH01816	999
+18	57789812	57790811	18	ena	mRNA	57789195	57820853	.	+	.	ID=transcript:KRH01817;Parent=gene:GLYMA_18G300200;biotype=protein_coding;transcript_id=KRH01817	999
+18	57789812	57790811	18	Glycine_max_v2.1	chromosome	1	58018742	.	.	.	ID=chromosome:18;Alias=CM000851.3,chr18,CM000851.2,NC_016105.2	999
+18	57816831	57817830	18	ena	gene	57789188	57820853	.	+	.	ID=gene:GLYMA_18G300200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_18G300200;logic_name=ena	999
+18	57816831	57817830	18	ena	mRNA	57789188	57820853	.	+	.	ID=transcript:KRH01816;Parent=gene:GLYMA_18G300200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH01816	999
+18	57816831	57817830	18	ena	mRNA	57789195	57820853	.	+	.	ID=transcript:KRH01817;Parent=gene:GLYMA_18G300200;biotype=protein_coding;transcript_id=KRH01817	999
+18	57816831	57817830	18	Glycine_max_v2.1	chromosome	1	58018742	.	.	.	ID=chromosome:18;Alias=CM000851.3,chr18,CM000851.2,NC_016105.2	999
+18	57816839	57817838	18	ena	gene	57789188	57820853	.	+	.	ID=gene:GLYMA_18G300200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_18G300200;logic_name=ena	999
+18	57816839	57817838	18	ena	mRNA	57789188	57820853	.	+	.	ID=transcript:KRH01816;Parent=gene:GLYMA_18G300200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH01816	999
+18	57816839	57817838	18	ena	mRNA	57789195	57820853	.	+	.	ID=transcript:KRH01817;Parent=gene:GLYMA_18G300200;biotype=protein_coding;transcript_id=KRH01817	999
+18	57816839	57817838	18	Glycine_max_v2.1	chromosome	1	58018742	.	.	.	ID=chromosome:18;Alias=CM000851.3,chr18,CM000851.2,NC_016105.2	999
+18	57816941	57817940	18	ena	gene	57789188	57820853	.	+	.	ID=gene:GLYMA_18G300200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_18G300200;logic_name=ena	999
+18	57816941	57817940	18	ena	mRNA	57789188	57820853	.	+	.	ID=transcript:KRH01816;Parent=gene:GLYMA_18G300200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH01816	999
+18	57816941	57817940	18	ena	mRNA	57789195	57820853	.	+	.	ID=transcript:KRH01817;Parent=gene:GLYMA_18G300200;biotype=protein_coding;transcript_id=KRH01817	999
+18	57816941	57817940	18	Glycine_max_v2.1	chromosome	1	58018742	.	.	.	ID=chromosome:18;Alias=CM000851.3,chr18,CM000851.2,NC_016105.2	999
+18	57816982	57817981	18	ena	gene	57789188	57820853	.	+	.	ID=gene:GLYMA_18G300200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_18G300200;logic_name=ena	999
+18	57816982	57817981	18	ena	mRNA	57789188	57820853	.	+	.	ID=transcript:KRH01816;Parent=gene:GLYMA_18G300200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH01816	999
+18	57816982	57817981	18	ena	mRNA	57789195	57820853	.	+	.	ID=transcript:KRH01817;Parent=gene:GLYMA_18G300200;biotype=protein_coding;transcript_id=KRH01817	999
+18	57816982	57817981	18	Glycine_max_v2.1	chromosome	1	58018742	.	.	.	ID=chromosome:18;Alias=CM000851.3,chr18,CM000851.2,NC_016105.2	999
+18	57816997	57817996	18	ena	gene	57789188	57820853	.	+	.	ID=gene:GLYMA_18G300200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_18G300200;logic_name=ena	999
+18	57816997	57817996	18	ena	mRNA	57789188	57820853	.	+	.	ID=transcript:KRH01816;Parent=gene:GLYMA_18G300200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH01816	999
+18	57816997	57817996	18	ena	mRNA	57789195	57820853	.	+	.	ID=transcript:KRH01817;Parent=gene:GLYMA_18G300200;biotype=protein_coding;transcript_id=KRH01817	999
+18	57816997	57817996	18	Glycine_max_v2.1	chromosome	1	58018742	.	.	.	ID=chromosome:18;Alias=CM000851.3,chr18,CM000851.2,NC_016105.2	999
+18	57817099	57818098	18	ena	gene	57789188	57820853	.	+	.	ID=gene:GLYMA_18G300200;biotype=protein_coding;description=hypothetical protein;gene_id=GLYMA_18G300200;logic_name=ena	999
+18	57817099	57818098	18	ena	mRNA	57789188	57820853	.	+	.	ID=transcript:KRH01816;Parent=gene:GLYMA_18G300200;biotype=protein_coding;tag=Ensembl_canonical;transcript_id=KRH01816	999
+18	57817099	57818098	18	ena	mRNA	57789195	57820853	.	+	.	ID=transcript:KRH01817;Parent=gene:GLYMA_18G300200;biotype=protein_coding;transcript_id=KRH01817	999
+18	57817099	57818098	18	Glycine_max_v2.1	chromosome	1	58018742	.	.	.	ID=chromosome:18;Alias=CM000851.3,chr18,CM000851.2,NC_016105.2	999
