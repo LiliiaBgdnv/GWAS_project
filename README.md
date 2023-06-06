@@ -74,6 +74,10 @@ cd plink_glm
 ```
 Run [run_plink_glm.sh](https://github.com/LiliiaBgdnv/GWAS_project/blob/add-bash_scripts/plink_glm/run_plink_glm.sh)  script to preprocess the phenotype data and run plink glm tool.
 
+```ruby
+sh run_plink_glm.sh
+``
+Run [run_plink_glm.sh](https://github.com/LiliiaBgdnv/GWAS_project/blob/add-bash_scripts/plink_glm/run_plink_glm.sh)  script to preprocess the phenotype data and run plink glm tool.
 
 ### [GEMMA  v0.98.6](https://github.com/genetics-statistics/GEMMA)
 
