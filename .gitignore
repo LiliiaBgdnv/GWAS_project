@@ -2,5 +2,7 @@
 ./*/*/.DS_Store
 ._*
 .Rhistory
+*/.ipynb_checkpoints
 .ipynb_checkpoints
+*/*/*/.ipynb_checkpoints
 ./*/*.log
