@@ -76,8 +76,7 @@ Run [run_plink_glm.sh](https://github.com/LiliiaBgdnv/GWAS_project/blob/add-bash
 
 ```ruby
 sh run_plink_glm.sh
-``
-Run [run_plink_glm.sh](https://github.com/LiliiaBgdnv/GWAS_project/blob/add-bash_scripts/plink_glm/run_plink_glm.sh)  script to preprocess the phenotype data and run plink glm tool.
+```
 
 ### [GEMMA  v0.98.6](https://github.com/genetics-statistics/GEMMA)
 
@@ -85,26 +84,34 @@ For this model, we prepared other genotype and phenotype files, changing the chr
 
 Installation:
 ```ruby
+cd ..
 wget https://github.com/genetics-statistics/GEMMA/releases/download/v0.98.5/gemma-0.98.5-linux-static-AMD64.gz
 gunzip gemma-0.98.5-linux-static-AMD64.gz
 mv gemma-0.98.5-linux-static-AMD64 gemma
 chmod 777 gemma
-
 ```
 
 #### BSLMM
 ```ruby
-cd ../GEMMA_BSLMM
+cd ./GEMMA_BSLMM
 ```
 To preprocess the data and run BSLMM, run [run_gemma_bslmm.sh](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GEMMA_BSLMM/run_gemma_bslmm.sh) script
+
+```ruby
+sh run_gemma_bslmm.sh
+```
 
 #### MVLMM
 ```ruby
 cd ../GEMMA_MVLMM
 ```
+
 Here we used [plink1.9](https://www.cog-genomics.org/plink/) to generate .bed files. Install it from the website.
 To preprocess the data and run BSLMM, run [run_gemma_mvlmm.sh](https://github.com/MaryM12/GWAS_project/blob/main/GEMMA_MVLMM/run_gemma_mvlmm.sh) script
 
+```ruby
+sh run_gemma_mvlmm.sh
+```
 
 ## Analysis
 
