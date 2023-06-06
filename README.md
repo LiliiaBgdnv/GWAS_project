@@ -72,7 +72,7 @@ Here **.bed, .bim, .fam** files are made using the program [plink2](https://www.
 ```ruby
 cd plink_glm
 ```
-Run [run_plink_glm.sh](https://github.com/LiliiaBgdnv/GWAS_project/tree/add-bash_scripts/plink_glm/plink_glm.sh)  script to preprocess the phenotype data and run plink glm tool.
+Run [run_plink_glm.sh](https://github.com/LiliiaBgdnv/GWAS_project/blob/add-bash_scripts/plink_glm/run_plink_glm.sh)  script to preprocess the phenotype data and run plink glm tool.
 
 
 ### [GEMMA  v0.98.6](https://github.com/genetics-statistics/GEMMA)
