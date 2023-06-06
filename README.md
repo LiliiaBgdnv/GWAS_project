@@ -59,7 +59,7 @@ cd GWAS_project
 
 ## Running the tools
 
-### [GAPIT (Version 3)](https://zzlab.net/GAPIT/) (FarmCPU, MLM, Blink)
+### [GAPIT (Version 3)](https://zzlab.net/GAPIT/) (FarmCPU, SUPER, Blink)
 All the data for the methods is in the "[GAPIT](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/GAPIT)" folder, and there is also an [**.rmd** file](https://github.com/LiliiaBgdnv/GWAS_project/blob/main/GAPIT/GAPIT.Rmd) with all the work of the three models. Here we also use files with the extension ".hmp.txt". Conversion of genotype data from vcf format to hapmap was performed in the [TASSEL 5](https://tassel.bitbucket.io/) program. 
  
 ### PLINK2 glm
