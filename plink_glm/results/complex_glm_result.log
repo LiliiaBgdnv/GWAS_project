@@ -15,9 +15,9 @@ Options in effect:
 
 Hostname: MacBook-Pro.local
 Working directory: /Users/iskys/GIT/GWAS_project/plink_glm
-Start time: Fri May 19 01:43:49 2023
+Start time: Tue Jun  6 23:36:50 2023
 
-Random number seed: 1684449829
+Random number seed: 1686083810
 16384 MiB RAM detected; reserving 100000 MiB for main workspace.
 Using up to 32 threads (change this with --threads).
 97 samples (0 females, 0 males, 97 ambiguous; 97 founders) loaded from
@@ -39,4 +39,4 @@ Results written to ./results/complex_glm_result.pheno.glm.linear .
 --adjust values (31322 tests) written to
 ./results/complex_glm_result.pheno.glm.linear.adjusted .
 
-End time: Fri May 19 01:43:49 2023
+End time: Tue Jun  6 23:36:50 2023

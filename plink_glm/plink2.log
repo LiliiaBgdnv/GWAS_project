@@ -1,0 +1,14 @@
+PLINK v2.00a4 M1 (25 Mar 2023)
+Options in effect:
+  --allow-extra-chr
+  --glm allow-no-covars
+  --pgen
+
+Hostname: MacBook-Pro.local
+Working directory: /Users/iskys/GIT/GWAS_project/plink_glm
+Start time: Tue Jun  6 23:33:45 2023
+
+Error: Missing --bed argument.
+For more info, try "plink2 --help <flag name>" or "plink2 --help | more".
+
+End time: Tue Jun  6 23:33:45 2023

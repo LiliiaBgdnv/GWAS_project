@@ -9,9 +9,9 @@ Options in effect:
 
 Hostname: MacBook-Pro.local
 Working directory: /Users/iskys/GIT/GWAS_project/plink_glm
-Start time: Fri May 19 01:38:22 2023
+Start time: Tue Jun  6 23:36:49 2023
 
-Random number seed: 1684449502
+Random number seed: 1686083809
 16384 MiB RAM detected; reserving 8192 MiB for main workspace.
 Using up to 8 compute threads.
 --vcf: 31676 variants scanned.
@@ -28,4 +28,4 @@ Writing ./inputs/complex_trait.fam ... done.
 Writing ./inputs/complex_trait.bim ... done.
 Writing ./inputs/complex_trait.bed ... done.
 
-End time: Fri May 19 01:38:22 2023
+End time: Tue Jun  6 23:36:50 2023

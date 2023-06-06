@@ -15,9 +15,9 @@ Options in effect:
 
 Hostname: MacBook-Pro.local
 Working directory: /Users/iskys/GIT/GWAS_project/plink_glm
-Start time: Fri May 19 01:40:57 2023
+Start time: Tue Jun  6 23:36:50 2023
 
-Random number seed: 1684449657
+Random number seed: 1686083810
 16384 MiB RAM detected; reserving 100000 MiB for main workspace.
 Using up to 32 threads (change this with --threads).
 249 samples (0 females, 0 males, 249 ambiguous; 249 founders) loaded from
@@ -30,13 +30,13 @@ Calculating allele frequencies... done.
 ./results/simple_glm_result_chr.afreq .
 --glm linear regression on phenotype 'PHENO1': done.
 Results written to ./results/simple_glm_result_chr.PHENO1.glm.linear .
---adjust: Genomic inflation est. lambda (based on median chisq) = 2.9122.
+--adjust: Genomic inflation est. lambda (based on median chisq) = 3.03233.
 --adjust values (23278 tests) written to
 ./results/simple_glm_result_chr.PHENO1.glm.linear.adjusted .
 --glm linear regression on phenotype 'Leu': done.
 Results written to ./results/simple_glm_result_chr.Leu.glm.linear .
---adjust: Genomic inflation est. lambda (based on median chisq) = 2.9122.
+--adjust: Genomic inflation est. lambda (based on median chisq) = 3.03233.
 --adjust values (23278 tests) written to
 ./results/simple_glm_result_chr.Leu.glm.linear.adjusted .
 
-End time: Fri May 19 01:40:57 2023
+End time: Tue Jun  6 23:36:50 2023
