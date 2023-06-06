@@ -43,14 +43,6 @@ Also to check for false positives, files were generated for the models in which 
 
 *Each method was run with default parameters.*
 
-1.  Brachi B. Genome-wide association studies in plants: the missing heritability is in the field / B. Brachi, G.P. Morris, J.O. Borevitz // Genome Biology. – 2011. – Vol. 12. – Genome-wide association studies in plants. – № 10. – P. 232.
-2.  Prioritized candidate causal haplotype blocks in plant genome-wide association studies / X. Wu [et al.] // PLOS Genetics. – 2022. – Vol. 18. – № 10. – P. e1010437.
-3.  Meng Huang and others, BLINK: a package for the next level of genome-wide association studies with both individuals and markers in the millions, GigaScience, Volume 8, Issue 2, February 2019, giy154, https://doi.org/10.1093/gigascience/giy154
-4.  Iterative Usage of Fixed and Random Effect Models for Powerful and Efficient Genome-Wide Association Studies, Liu X, Huang M, Fan B, Buckler ES, Zhang Z (2016) Iterative Usage of Fixed and Random Effect Models for Powerful and Efficient Genome-Wide Association Studies. PLOS Genetics 12(2): e1005767. https://doi.org/10.1371/journal.pgen.1005767
-5.  A SUPER Powerful Method for Genome Wide Association Study, Wang Q, Tian F, Pan Y, Buckler ES, Zhang Z (2014) A SUPER Powerful Method for Genome Wide Association Study. PLOS ONE 9(9): e107684. https://doi.org/10.1371/journal.pone.0107684
-6.  Chu BB, Keys KL, German CA, Zhou H, Zhou JJ, Sobel EM, Sinsheimer JS, Lange K. Iterative hard thresholding in genome-wide association studies: Generalized linear models, prior weights, and double sparsity. Gigascience. 2020 Jun 1;9(6):giaa044. doi: 10.1093/gigascience/giaa044. PMID: 32491161; PMCID: PMC7268817.
-7.  Xiang Zhou, Peter Carbonetto and Matthew Stephens (2013). Polygenic modeling with bayesian sparse linear mixed models. PLoS Genetics 9, e1003264.
-8.  Xiang Zhou and Matthew Stephens (2014). Efficient multivariate linear mixed model algorithms for genome-wide association studies. Nature Methods 11, 407–409.
 
 ## Getting Started
 
@@ -373,3 +365,13 @@ The heatmaps show the total number number of the SNPs, identified by each model 
 * <img src=https://github.com/simple-icons/simple-icons/blob/develop/icons/macos.svg height = 20> Ventura 13.2.1
 * <img src=https://github.com/simple-icons/simple-icons/blob/develop/icons/gnubash.svg height=20> Bash
 * <img src=https://github.com/simple-icons/simple-icons/blob/develop/icons/r.svg height=20> R 4.2.3
+
+
+1.  Brachi B. Genome-wide association studies in plants: the missing heritability is in the field / B. Brachi, G.P. Morris, J.O. Borevitz // Genome Biology. – 2011. – Vol. 12. – Genome-wide association studies in plants. – № 10. – P. 232.
+2.  Prioritized candidate causal haplotype blocks in plant genome-wide association studies / X. Wu [et al.] // PLOS Genetics. – 2022. – Vol. 18. – № 10. – P. e1010437.
+3.  Meng Huang and others, BLINK: a package for the next level of genome-wide association studies with both individuals and markers in the millions, GigaScience, Volume 8, Issue 2, February 2019, giy154, https://doi.org/10.1093/gigascience/giy154
+4.  Iterative Usage of Fixed and Random Effect Models for Powerful and Efficient Genome-Wide Association Studies, Liu X, Huang M, Fan B, Buckler ES, Zhang Z (2016) Iterative Usage of Fixed and Random Effect Models for Powerful and Efficient Genome-Wide Association Studies. PLOS Genetics 12(2): e1005767. https://doi.org/10.1371/journal.pgen.1005767
+5.  A SUPER Powerful Method for Genome Wide Association Study, Wang Q, Tian F, Pan Y, Buckler ES, Zhang Z (2014) A SUPER Powerful Method for Genome Wide Association Study. PLOS ONE 9(9): e107684. https://doi.org/10.1371/journal.pone.0107684
+6.  Chu BB, Keys KL, German CA, Zhou H, Zhou JJ, Sobel EM, Sinsheimer JS, Lange K. Iterative hard thresholding in genome-wide association studies: Generalized linear models, prior weights, and double sparsity. Gigascience. 2020 Jun 1;9(6):giaa044. doi: 10.1093/gigascience/giaa044. PMID: 32491161; PMCID: PMC7268817.
+7.  Xiang Zhou, Peter Carbonetto and Matthew Stephens (2013). Polygenic modeling with bayesian sparse linear mixed models. PLoS Genetics 9, e1003264.
+8.  Xiang Zhou and Matthew Stephens (2014). Efficient multivariate linear mixed model algorithms for genome-wide association studies. Nature Methods 11, 407–409.
