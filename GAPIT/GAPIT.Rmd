@@ -15,7 +15,7 @@ options(repos = c(CRAN = "http://cran.rstudio.com"))
 ```{r}
 # Simple
 phenotypes_simple <- read.table('../Raw_data/phenotypes_simple_trait.tsv', header = TRUE, sep='\t')
-phenotypes_simple$Leu <- round(rnorm(249, mean=mean(phenotypes_simple$Leu, na.rm = T), sd=sd(phenotypes_simple$Leu, na.rm = T)), 1)
+phenotypes_simple$Leu <- round(rnorm(244, mean=mean(phenotypes_simple$Leu, na.rm = T), sd=sd(phenotypes_simple$Leu, na.rm = T)), 1)
 write.table(phenotypes_simple, file='../Raw_data/phenotypes_simple_trait_gen.tsv', quote=FALSE, sep='\t', row.names=FALSE)
 
 # Complex
