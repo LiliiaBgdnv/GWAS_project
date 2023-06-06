@@ -201,6 +201,7 @@ Press `submit`.
 Run the script [intersect_snps.sh](https://github.com/LiliiaBgdnv/GWAS_project/tree/main/for_annotation)
 ```ruby
 sh intersect_snps.sh
+```
 
 As a result, you obtain files with protein IDs named protein_<model_name>_<simpleorcomplex>.txt. For the last stage of the annotation, you need to see which protein is encoded under that ID at that site choosing the Glycine max organism.
 
