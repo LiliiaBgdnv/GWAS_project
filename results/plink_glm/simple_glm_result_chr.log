@@ -1,0 +1,42 @@
+PLINK v2.00a4 M1 (25 Mar 2023)
+Options in effect:
+  --adjust cols=chrom,pos,alt,a1,ref,gc,fdrbh
+  --allow-extra-chr
+  --covar-variance-standardize
+  --freq
+  --glm allow-no-covars
+  --memory 100000
+  --out ../results/plink_glm/simple_glm_result_chr
+  --pgen ./inputs/simple_trait.bed
+  --pheno ../Raw_data/phenotypes_simple_trait_2col.tsv
+  --psam ./inputs/simple_trait.fam
+  --pvar ./inputs/simple_trait.bim
+  --threads 32
+
+Hostname: MacBook-Pro.local
+Working directory: /Users/iskys/GIT/GWAS_project/plink_glm
+Start time: Wed Jun  7 13:18:43 2023
+
+Random number seed: 1686133123
+16384 MiB RAM detected; reserving 100000 MiB for main workspace.
+Using up to 32 threads (change this with --threads).
+249 samples (0 females, 0 males, 249 ambiguous; 249 founders) loaded from
+./inputs/simple_trait.fam.
+23278 variants loaded from ./inputs/simple_trait.bim.
+2 quantitative phenotypes loaded.
+--covar-variance-standardize: No covariates affected.
+Calculating allele frequencies... done.
+--freq: Allele frequencies (founders only) written to
+../results/plink_glm/simple_glm_result_chr.afreq .
+--glm linear regression on phenotype 'PHENO1': done.
+Results written to ../results/plink_glm/simple_glm_result_chr.PHENO1.glm.linear .
+--adjust: Genomic inflation est. lambda (based on median chisq) = 3.03233.
+--adjust values (23278 tests) written to
+../results/plink_glm/simple_glm_result_chr.PHENO1.glm.linear.adjusted .
+--glm linear regression on phenotype 'Leu': done.
+Results written to ../results/plink_glm/simple_glm_result_chr.Leu.glm.linear .
+--adjust: Genomic inflation est. lambda (based on median chisq) = 3.03233.
+--adjust values (23278 tests) written to
+../results/plink_glm/simple_glm_result_chr.Leu.glm.linear.adjusted .
+
+End time: Wed Jun  7 13:18:43 2023
